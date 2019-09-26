@@ -1,8 +1,8 @@
 Android
 PlayerPath?
-/Users/liyiyuan/Desktop/log_viewer.apk
+/Users/liyiyuan/Desktop/copy.apk
 SceneListBegin?
-Assets/UnityLogViewerTest/Scene/UnityLogViewTestScene.unity
+Assets/CopyContent/CopyContentScene.unity
 SceneListEnd?
 b44b3c7e61d7a2bb08cca232ea0514e4 Assembly-CSharp.dll:.MeshDrawLine
 922dde826533f20a40eadb188df86725 Assembly-CSharp.dll:.TestReporter
@@ -161,3 +161,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 404bdfd2e600c0f672611fc1d737f8aa Assembly-CSharp.dll:.UnityWebRequestDemo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
 44fbc54afec82b6498d4bde959a1864c Assembly-CSharp.dll:.Timer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CopyContentController

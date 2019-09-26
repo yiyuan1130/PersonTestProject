@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}</ProjectGuid>
+    <ProjectGuid>{3EF461CC-B1A0-41C5-9A15-793714C3C9B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AnimationCurve\AnimationCurveDemo.cs" />
+     <Compile Include="Assets\CopyContent\CopyContentController.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
      <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
+     <Compile Include="Assets\EventDispatcher\Dispatcher.cs" />
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
      <Compile Include="Assets\MessDraw\MeshDraw.cs" />
