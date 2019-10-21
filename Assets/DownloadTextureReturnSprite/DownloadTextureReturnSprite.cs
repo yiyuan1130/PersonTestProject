@@ -31,15 +31,17 @@ public class DownloadTextureReturnSprite : MonoBehaviour {
 	}
 
 	IEnumerator DownLoadImageWebRequest(){
-		
-		UnityWebRequest uwr = UnityWebRequestTexture.GetTexture ("http://i2.hdslb.com/bfs/archive/5dd37ef4b64b8abeef13126512ace25c5db2df09.jpg");
+		string url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571382377078&di=76fdd815d50445024b3fd8c7978f2b93&imgtype=0&src=http%3A%2F%2Fpic27.nipic.com%2F20130313%2F2856767_101843299000_2.jpg";
+		// string url = "http://i2.hdslb.com/bfs/archive/5dd37ef4b64b8abeef13126512ace25c5db2df09.jpg";
+		UnityWebRequest uwr = UnityWebRequestTexture.GetTexture (url);
 		uwr.timeout = 5;
 		yield return uwr.SendWebRequest();
 		byte[] bytes = uwr.downloadHandler.data;
+		// Texture2D tex = new Texture2D (1, 1, TextureFormat.ARGB32, false);
 		Texture2D tex = new Texture2D (1, 1);
 		tex.LoadImage (bytes);
 		targetImage.sprite = Sprite.Create (tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-		targetImage.GetComponent<RectTransform> ().sizeDelta = new Vector2 (tex.width, tex.height) * 0.5f;
+		// targetImage.GetComponent<RectTransform> ().sizeDelta = new Vector2 (tex.width, tex.height) * 0.5f;
 	}
 
 	void DownloadOrGetLocalImage(){

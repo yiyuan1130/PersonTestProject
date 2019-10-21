@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityLogViewerTest/Scene/UnityLogViewTestScene.unity
     guid: 8c0a6e09ec94040eb88b1445bf1fe732
-  - enabled: 1
+  - enabled: 0
     path: Assets/CopyContent/CopyContentScene.unity
     guid: 14bbf62906a5943149e95265d7e75bc0
+  - enabled: 0
+    path: Assets/DeviceInfos/DeviceInfo.unity
+    guid: 437fc20b1ba054af9a185feed0e402c2
+  - enabled: 1
+    path: Assets/DownloadTextureReturnSprite/DownloadTextureReturnSprite.unity
+    guid: 97c5ee6dcc0d24c01a1b50b9d65f5689

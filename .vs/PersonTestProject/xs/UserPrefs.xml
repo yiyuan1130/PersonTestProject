@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{2EB4817A-1A1A-35F9-9946-74A889A36734}|">
+  <MonoDevelop.Ide.ItemProperties.PersonTestProject PreferredExecutionTarget="eb68a850-b697-4d2e-80c6-7264bd387ed7" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DeviceInfos/DeviceInfo.cs">
+    <Files>
+      <File FileName="Assets/CopyContent/CopyContentController.cs" Line="17" Column="3" />
+      <File FileName="Assets/DeviceInfos/DeviceInfo.cs" Line="27" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PersonTestProject" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="CopyContent" expanded="True" />
+              <Node name="DeviceInfos" expanded="True">
+                <Node name="DeviceInfo.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
