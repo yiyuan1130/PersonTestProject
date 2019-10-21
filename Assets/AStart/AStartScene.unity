@@ -137,10 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 505450606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3105fa9fa974dcf8e08981f9c9d527, type: 3}
+  m_Script: {fileID: 11500000, guid: c748bf91268d54dccb706f74a32f94b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapObj: {fileID: 0}
   pointObj: {fileID: 1000729347205032, guid: 70f4b49acaaf04291ba83004e2ad98bb, type: 2}
 --- !u!4 &505450608
 Transform:
