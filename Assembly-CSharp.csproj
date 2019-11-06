@@ -63,6 +63,8 @@
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
      <Compile Include="Assets\MessDraw\MeshDraw.cs" />
+     <Compile Include="Assets\SliceSprite\Line.cs" />
+     <Compile Include="Assets\SliceSprite\SliceSprite.cs" />
      <Compile Include="Assets\Timer\MiaoKidsTime.cs" />
      <Compile Include="Assets\Timer\Timer.cs" />
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />

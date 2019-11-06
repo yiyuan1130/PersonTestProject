@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/AStart/AStartScene.unity
+- path: Assets/DownloadTextureReturnSprite/DownloadTextureReturnSprite.unity
   isLoaded: 1
   isActive: 1
