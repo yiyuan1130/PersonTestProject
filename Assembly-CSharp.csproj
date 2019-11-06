@@ -64,6 +64,7 @@
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
      <Compile Include="Assets\MessDraw\MeshDraw.cs" />
      <Compile Include="Assets\SliceSprite\Line.cs" />
+     <Compile Include="Assets\SliceSprite\Reset.cs" />
      <Compile Include="Assets\SliceSprite\SliceSprite.cs" />
      <Compile Include="Assets\Timer\MiaoKidsTime.cs" />
      <Compile Include="Assets\Timer\Timer.cs" />
