@@ -1,0 +1,72 @@
+# =============== #
+# Unity Generated #
+# =============== #
+
+Library/
+Temp/
+
+# Debug Temporary Files
+obj/
+
+# ====================== #
+# Unity Editor Generated #
+# ====================== #
+
+Assets/StreamingAssets/iOS*
+Assets/StreamingAssets/Android*
+Assets/StreamingAssets/Win*
+Assets/Resources/Lua*
+
+/Assets/Packages/miaokids-tolua/Source/Generate/*
+!/Assets/Packages/miaokids-tolua/Source/Generate/DelegateFactory.cs*
+!/Assets/Packages/miaokids-tolua/Source/Generate/LuaBinder.cs*
+Assets/StreamingAssets/build_info.txt
+
+# ===================================== #
+# Visual Studio / MonoDevelop Generated #
+# ===================================== #
+
+/*.csproj
+/*.sln
+/*.userprefs
+.vs/
+
+# =============== #
+# Build Generated #
+# =============== #
+
+Builds/
+
+# ============ #
+# OS Generated #
+# ============ #
+
+.DS_Store
+
+# ================ #
+# Custom Generated #
+# ================ #
+
+/zero/*
+/AssetBundles/*
+/Assets/Resources/PrefabsInBundles*
+/MIAOKIDSMATH/*
+/miaokids/*
+Assets/Game/Courses/ZhangCourse_Num31.meta~HEAD
+Assets/Game/Courses/ZhangCourse_Num31.meta~zhangcourse_num31_makeup10_qw
+
+# Generated using `npm install` command
+/node_modules/*
+
+#
+/Assets/Editor/BuildEnDeCode.cs
+/Assets/Editor/BuildEnDeCode.meta
+#
+Assets/TMP/*
+Assets/Packages/miaokids-framework/Scripts/Operations/AssetLoadFileOperation.cs.meta~HEAD
+Assets/Packages/miaokids-framework/Scripts/Operations/AssetLoadFileOperation.cs~HEAD
+Assets/Packages/miaokids-framework/Scripts/Utilities/ResourcesWrapper.cs.meta~course_course_interact
+Assets/Editor/Tools/BuildEnDeCode.cs.meta
+Assets/Editor/Tools/BuildEnDeCode.cs
+
+
