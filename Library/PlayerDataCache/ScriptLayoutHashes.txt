@@ -2,7 +2,7 @@ Android
 PlayerPath?
 /Users/liyiyuan/Desktop/cutsprite.apk
 SceneListBegin?
-Assets/SliceSprite/CutSpriite.unity
+Assets/SliceSprite/SliceSpriite.unity
 SceneListEnd?
 b44b3c7e61d7a2bb08cca232ea0514e4 Assembly-CSharp.dll:.MeshDrawLine
 922dde826533f20a40eadb188df86725 Assembly-CSharp.dll:.TestReporter
@@ -21,6 +21,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnityLogViewTest
+097051b3e4ee525252b1553acca38fd3 Assembly-CSharp.dll:MiaoKids.SliceSprite
 ccf9b7d8344305b8b35e4ca9c24c0cdd Assembly-CSharp.dll:.AStartController
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -164,6 +165,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 404bdfd2e600c0f672611fc1d737f8aa Assembly-CSharp.dll:.UnityWebRequestDemo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
-44fbc54afec82b6498d4bde959a1864c Assembly-CSharp.dll:.Timer
-cac5e62c64bc02a8223e45b78da71b3c Assembly-CSharp.dll:MiaoKids.SliceSprite
 81e512ce2cf85f48450bd61bc69bcb52 Assembly-CSharp.dll:.Reset
+44fbc54afec82b6498d4bde959a1864c Assembly-CSharp.dll:.Timer

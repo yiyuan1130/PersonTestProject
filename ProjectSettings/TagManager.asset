@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SliceSprite
+    uniqueID: 4092289225
+    locked: 0

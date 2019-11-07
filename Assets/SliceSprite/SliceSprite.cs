@@ -20,7 +20,24 @@ namespace MiaoKids {
 		// public GameObject go;
 		LineRenderer lr;
 
+		[Header("制定的材质球，名字：SliceSprite_Mesh")]
 		public Material material;
+
+		[Header("偏移量：越大小孩子切割时候容错率越高，自动吸附到顶点")]
+		[Range(0, 1)]
+		public float offset = 0.05f;
+
+		[Header("画的线宽度")]
+		[Range(0, 1)]
+		public float lineWidth = 0.01f;
+
+		int sortingLayer = 1;
+
+		public int orderInLayer = 0;
+
+		public Material lineMaterial;
+
+		
 
 		// 画的线起点
 		Vector3 startPos;
@@ -40,7 +57,10 @@ namespace MiaoKids {
 		// 图片最大X值
 		float textureMaxX;
 		void Awake() {
+			SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			lr = new GameObject("line").AddComponent<LineRenderer>();
+			sortingLayer = spriteRenderer.sortingLayerID;
+			orderInLayer = spriteRenderer.sortingOrder + 1;
 		}
 
 		void Update(){
@@ -63,10 +83,13 @@ namespace MiaoKids {
 				return;
 			points = new Vector3[2]{startPos, endPos};		
 			if (lr){
-				lr.startWidth = 0.05f; 
-				lr.endWidth = 0.05f;
+				lr.startWidth = lineWidth; 
+				lr.endWidth = lineWidth;
 				lr.useWorldSpace = false;
+				lr.sortingLayerID = sortingLayer;
+				lr.sortingOrder = orderInLayer;
 				lr.positionCount = points.Length;
+				lr.material = lineMaterial;
 				lr.SetPositions (points);
 			}
 		}
@@ -83,18 +106,35 @@ namespace MiaoKids {
 
 			// 计算画的线和图像线段的交点
 			List<Vector2> points = CaculateIntersectionPoints(lines);
-			if (points.Count < 2){
-				Debug.Log("<color=green> 交点个数小于2，无法切割 </color>");
+			if (points.Count != 2){
+				Debug.Log("<color=green> 交点个数不是2，无法切割 </color>");
 				return;
 			}
 			
+			// 合并交点、顶点距离相近的点
+			points = MergePoint(points, vertices);
+
 			// 合并交点和原图像顶点
 			Vector2[] allPoints = new Vector2[vertices.Length + points.Count];
 			vertices.CopyTo(allPoints, 0);
 			points.ToArray().CopyTo(allPoints, vertices.Length);
 
+			// 去重
+			List<Vector2> allPointsList = new List<Vector2>();
+			for (int i = 0; i < allPoints.Length; i++)
+			{
+				Vector2 point = allPoints[i];
+				int sameIndex = allPointsList.FindIndex((Vector2 v) => {
+ 					return point == v;
+				});
+				if (sameIndex < 0){
+					allPointsList.Add(point);
+				}
+			}
+
 			// 按照画的线段将点分区域，点和线关系：1.点在线上 2.点在线上方 3.点在线下方
-			Dictionary<string, List<Vector2>> posOfPoints = Line.GetPositionOfPointWithLine(new Line(startPos, endPos), allPoints);
+			// Dictionary<string, List<Vector2>> posOfPoints = Line.GetPositionOfPointWithLine(new Line(startPos, endPos), allPoints);
+			Dictionary<string, List<Vector2>> posOfPoints = Line.GetPositionOfPointWithLine(new Line(startPos, endPos), allPointsList.ToArray());
 
 			// 根据点线关系点集把点分两部分，每部分的点都是即将组成mesh的点集
 			List<Vector2> part1Vertices = new List<Vector2>();
@@ -198,6 +238,25 @@ namespace MiaoKids {
 			}
 			return points;
 		}
+
+		// 合并和交点相近的顶点，将符合条件的交点坐标置为顶点坐标
+		// 将画的线startPos和endPos置为两个交点坐标，保证交点在线上
+		List<Vector2> MergePoint (List<Vector2> points, Vector2[] vertices){
+			for (int i = 0; i < points.Count; i++)
+			{
+				for (int j = 0; j < vertices.Length; j++)
+				{
+					if (Vector2.Distance(points[i], vertices[j]) <= offset){
+						points[i] = vertices[j];
+						break;
+					}
+				}
+			}
+			startPos = points[0];
+			endPos = points[1];
+			return points;
+		}
+
 
 		// 根据线分离顶点为两块区域
 		void SeparatePointsAsVertices(Dictionary<string, List<Vector2>> posOfPoints, out List<Vector2> vertiesPart1, out List<Vector2> vertiesPart2){
