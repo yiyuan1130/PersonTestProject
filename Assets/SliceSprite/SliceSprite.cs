@@ -404,8 +404,8 @@ namespace MiaoKids {
 			} else {
 				direct = 1.0f;
 			}
-			part1Obj.transform.position = part1Obj.transform.position + new Vector3(0.1f * direct, 0.1f, 0);
-			part2Obj.transform.position = part2Obj.transform.position - new Vector3(0.1f * direct, 0.1f, 0);
+			part1Obj.transform.position = part1Obj.transform.position + new Vector3(0.05f * direct, 0.05f, 0);
+			part2Obj.transform.position = part2Obj.transform.position - new Vector3(0.05f * direct, 0.05f, 0);
 
 			sliceManager.onEndSlice.Invoke(part1Obj, part2Obj, lr.gameObject);
 		}

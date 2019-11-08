@@ -11,8 +11,8 @@ public class Reset : MonoBehaviour {
 
 	public void InstantiateSpriteObj(){
 		spriteSliceObj = GameObject.Instantiate(spriteObj);
-		spriteSliceObj.transform.localScale = Vector3.one * 1.4f;
-		spriteSliceObj.transform.localPosition = Vector3.zero - Vector3.one;
+		spriteSliceObj.transform.localScale = Vector3.one * 1.1f;
+		spriteSliceObj.transform.localPosition = Vector3.zero + Vector3.one * 0.1f;
 		MiaoKids.SliceManager spriteSliceManager = spriteSliceObj.GetComponent<MiaoKids.SliceManager>();
 		spriteSliceManager.onStartSlice.AddListener(() => {
 			Debug.Log("start slice");
