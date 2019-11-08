@@ -147,12 +147,19 @@ namespace MiaoKids {
 			gameObject.SetActive(false);
 		}
 
-		// 通过Collider获取顶点坐标
+		// 通过Collider获取顶点的世界坐标，根据gameObject的缩放和位置重新计算
 		Vector2[] GetVerticesFromPolygonCollider(){
 			SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
 			Sprite sprite = sr.sprite;
 			PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
 			Vector2[] vertices = collider.points;
+			for (int i = 0; i < vertices.Length; i++)
+			{
+				Vector2 ver = vertices[i];
+				ver = new Vector2(ver.x * transform.localScale.x, ver.y * transform.localScale.y);
+				ver = new Vector2(ver.x + transform.position.x, ver.y + transform.position.y);
+				vertices[i] = ver;
+			}
 			return vertices;
 		}
 
