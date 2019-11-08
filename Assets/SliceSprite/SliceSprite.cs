@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace MiaoKids {
 
@@ -15,29 +18,29 @@ namespace MiaoKids {
 		6. 创建mesh
 		7. 调整贴图UV
 	 */
+	[RequireComponent (typeof(UnityEngine.PolygonCollider2D))]
 	public class SliceSprite : MonoBehaviour {
-
-		// public GameObject go;
 		LineRenderer lr;
 
-		[Header("制定的材质球，名字：SliceSprite_Mesh")]
+		[HideInInspector]
 		public Material material;
 
-		[Header("偏移量：越大小孩子切割时候容错率越高，自动吸附到顶点")]
-		[Range(0, 1)]
+		[HideInInspector]
 		public float offset = 0.05f;
 
-		[Header("画的线宽度")]
-		[Range(0, 1)]
+		[HideInInspector]
 		public float lineWidth = 0.01f;
 
-		int sortingLayer = 1;
+		[HideInInspector]
+		public int orderInLayer = -1;
 
-		public int orderInLayer = 0;
-
+		[HideInInspector]
 		public Material lineMaterial;
 
-		
+		SliceManager sliceManager;
+
+		// 线的层级
+		int sortingLayer = 1;
 
 		// 画的线起点
 		Vector3 startPos;
@@ -60,12 +63,16 @@ namespace MiaoKids {
 			SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			lr = new GameObject("line").AddComponent<LineRenderer>();
 			sortingLayer = spriteRenderer.sortingLayerID;
-			orderInLayer = spriteRenderer.sortingOrder + 1;
+			if (orderInLayer == -1){
+				orderInLayer = spriteRenderer.sortingOrder + 1;
+			}
+			sliceManager = gameObject.GetComponent<SliceManager>();
 		}
 
 		void Update(){
 			DrawLine();
 			if (Input.GetMouseButtonDown(0)){
+				sliceManager.onStartSlice.Invoke();
 				startPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
 				drawingLine = true;
 			}
@@ -73,7 +80,6 @@ namespace MiaoKids {
 				endPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
 				drawingLine = false;
 				DoSlice();
-				GameObject.DestroyImmediate(lr.gameObject);
 			}
 			endPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
 		}
@@ -115,25 +121,12 @@ namespace MiaoKids {
 			points = MergePoint(points, vertices);
 
 			// 合并交点和原图像顶点
-			Vector2[] allPoints = new Vector2[vertices.Length + points.Count];
-			vertices.CopyTo(allPoints, 0);
-			points.ToArray().CopyTo(allPoints, vertices.Length);
+			Vector2[] allPoints = SumVerticesAndIntersection(vertices, points);
 
 			// 去重
-			List<Vector2> allPointsList = new List<Vector2>();
-			for (int i = 0; i < allPoints.Length; i++)
-			{
-				Vector2 point = allPoints[i];
-				int sameIndex = allPointsList.FindIndex((Vector2 v) => {
- 					return point == v;
-				});
-				if (sameIndex < 0){
-					allPointsList.Add(point);
-				}
-			}
+			List<Vector2> allPointsList = RemoveRepetitivePoint(allPoints);
 
 			// 按照画的线段将点分区域，点和线关系：1.点在线上 2.点在线上方 3.点在线下方
-			// Dictionary<string, List<Vector2>> posOfPoints = Line.GetPositionOfPointWithLine(new Line(startPos, endPos), allPoints);
 			Dictionary<string, List<Vector2>> posOfPoints = Line.GetPositionOfPointWithLine(new Line(startPos, endPos), allPointsList.ToArray());
 
 			// 根据点线关系点集把点分两部分，每部分的点都是即将组成mesh的点集
@@ -149,26 +142,9 @@ namespace MiaoKids {
 			GameObject part1Obj = CreateMeshGameObject(srotedVertiesPart1);
 			GameObject part2Obj = CreateMeshGameObject(srotedVertiesPart2);
 
-			float k = 0;
-			if (startPos.x != endPos.x){
-				k = (endPos.y - startPos.y) / (endPos.x - startPos.x);
-			}
-			float direct = 1.0f;
-			if (k > 0){
-				direct = -1.0f;
-			} else {
-				direct = 1.0f;
-			}
-			part1Obj.transform.position = part1Obj.transform.position + new Vector3(0.1f * direct, 0.1f, 0);
-			part2Obj.transform.position = part2Obj.transform.position - new Vector3(0.1f * direct, 0.1f, 0);
-			gameObject.SetActive(false);
-		}
+			MoveTwoPartAfterSlice(part1Obj, part2Obj);
 
-		void Swap(ref GameObject go1, ref GameObject go2){
-			Debug.Log("swap");
-			GameObject go = go1;
-			go1 = go2;
-			go2 = go;
+			gameObject.SetActive(false);
 		}
 
 		// 通过Collider获取顶点坐标
@@ -257,6 +233,29 @@ namespace MiaoKids {
 			return points;
 		}
 
+		// 合并交点和顶点到一个集合中
+		Vector2[] SumVerticesAndIntersection(Vector2[] vertices, List<Vector2> points){
+			Vector2[] allPoints = new Vector2[vertices.Length + points.Count];
+			vertices.CopyTo(allPoints, 0);
+			points.ToArray().CopyTo(allPoints, vertices.Length);
+			return allPoints;
+		}
+
+		// 点去重
+		List<Vector2> RemoveRepetitivePoint(Vector2[] allPoints){
+			List<Vector2> allPointsList = new List<Vector2>();
+			for (int i = 0; i < allPoints.Length; i++)
+			{
+				Vector2 point = allPoints[i];
+				int sameIndex = allPointsList.FindIndex((Vector2 v) => {
+ 					return point == v;
+				});
+				if (sameIndex < 0){
+					allPointsList.Add(point);
+				}
+			}
+			return allPointsList;
+		}
 
 		// 根据线分离顶点为两块区域
 		void SeparatePointsAsVertices(Dictionary<string, List<Vector2>> posOfPoints, out List<Vector2> vertiesPart1, out List<Vector2> vertiesPart2){
@@ -385,37 +384,22 @@ namespace MiaoKids {
 			return partObj;
 		}
 
-		void DebugShowPoint(Vector2[] points){
-			StartCoroutine(CreatePointGo(points));
-		}
-
-		IEnumerator CreatePointGo(Vector2[] points){
-			for (int i = 0; i < points.Length; i++)
-			{
-				CreateSign(points[i]);
-				yield return new WaitForSeconds(0.5f);
+		// 移动切割后的连部分
+		void MoveTwoPartAfterSlice(GameObject part1Obj, GameObject part2Obj){
+			float k = 0;
+			if (startPos.x != endPos.x){
+				k = (endPos.y - startPos.y) / (endPos.x - startPos.x);
 			}
-		}
-
-		IEnumerator ShowPoints(Dictionary<string, List<Vector2>> posOfPoints){
-			foreach (var item in posOfPoints)
-			{
-				Debug.LogFormat("Points Pos : {0}, count : {1}", item.Key, item.Value.Count);
-				for (int i = 0; i < item.Value.Count; i++)
-				{
-					yield return new WaitForSeconds(0.5f);
-					CreateSign(item.Value[i], string.Format("{0}_{1}", item.Key, i));
-				}
+			float direct = 1.0f;
+			if (k > 0){
+				direct = -1.0f;
+			} else {
+				direct = 1.0f;
 			}
-		}
+			part1Obj.transform.position = part1Obj.transform.position + new Vector3(0.1f * direct, 0.1f, 0);
+			part2Obj.transform.position = part2Obj.transform.position - new Vector3(0.1f * direct, 0.1f, 0);
 
-		void CreateSign(Vector2 pos, string name = null){
-			// GameObject o = GameObject.Instantiate(go);
-			// o.transform.localPosition = pos;
-			// o.transform.localScale = Vector3.one * 0.05f;
-			// if (name != null){
-			// 	o.name = name;
-			// }
+			sliceManager.onEndSlice.Invoke(part1Obj, part2Obj, lr.gameObject);
 		}
 	}
 }

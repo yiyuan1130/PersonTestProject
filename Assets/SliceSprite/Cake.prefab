@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4462668067711204}
   - component: {fileID: 212478820730408402}
-  - component: {fileID: 60425260930792416}
-  - component: {fileID: 114101128037408618}
+  - component: {fileID: 114325548013496432}
+  - component: {fileID: 60189617227357516}
+  - component: {fileID: 114096652853708820}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60425260930792416
+--- !u!60 &60189617227357516
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -66,11 +67,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.4852191, y: 1.2395563}
-      - {x: -2.7053132, y: -1.2394503}
-      - {x: 2.7019536, y: -1.2402763}
-      - {x: 1.4735987, y: 1.24309}
---- !u!114 &114101128037408618
+    - - {x: -1.4830456, y: 1.2406993}
+      - {x: -2.7042959, y: -1.2368089}
+      - {x: 2.7017598, y: -1.237039}
+      - {x: 1.4706956, y: 1.24}
+--- !u!114 &114096652853708820
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -81,10 +82,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03771361dd3734d45ada862fc75a6b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 224d4b428e6c140dd8a07324b23f993d, type: 2}
-  offset: 0.1
-  lineWidth: 0.05
-  orderInLayer: 0
+  material: {fileID: 0}
+  offset: 0.05
+  lineWidth: 0.01
+  orderInLayer: -1
+  lineMaterial: {fileID: 0}
+--- !u!114 &114325548013496432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316851911187302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cedf9745ed894387940e17325fee234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshMaterial: {fileID: 2100000, guid: 224d4b428e6c140dd8a07324b23f993d, type: 2}
+  offset: 0.05
+  lineWidth: 0.01
+  orderInLayer: -1
   lineMaterial: {fileID: 2100000, guid: d809c5ca02c164dd8912bfd3b268b000, type: 2}
 --- !u!212 &212478820730408402
 SpriteRenderer:

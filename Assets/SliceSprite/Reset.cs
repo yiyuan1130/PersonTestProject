@@ -8,42 +8,35 @@ public class Reset : MonoBehaviour {
 
 	GameObject spriteSliceObj;
 	// Use this for initialization
-	void Start () {
-		ResetSprite();
-	}
-	
-	public void ResetSprite(){
-		DestroyPart();
-		DestroyLine();
-		DestroySprite();
-		InstantiateObj();
+
+	public void InstantiateSpriteObj(){
+		spriteSliceObj = GameObject.Instantiate(spriteObj);
+		spriteSliceObj.transform.localScale = Vector3.one;
+		spriteSliceObj.transform.localPosition = Vector3.zero;
+		MiaoKids.SliceManager spriteSliceManager = spriteSliceObj.GetComponent<MiaoKids.SliceManager>();
+		spriteSliceManager.onStartSlice.AddListener(() => {
+			Debug.Log("start slice");
+		});
+		spriteSliceManager.onEndSlice.AddListener((GameObject go1, GameObject go2, GameObject line) => {
+			Debug.Log("end slice");
+			Debug.LogFormat("go1 是否是三角形 {0}", MiaoKids.JudgeFigure.IsTargetFigure(go1, MiaoKids.FigureType.triangle));
+			Debug.LogFormat("go2 是否是三角形 {0}", MiaoKids.JudgeFigure.IsTargetFigure(go2, MiaoKids.FigureType.triangle));
+			StartCoroutine(OnSliceEnd(go1, go2, line));
+		});
 	}
 
-	void InstantiateObj(){
-		spriteSliceObj = GameObject.Instantiate(spriteObj);
-		spriteSliceObj.name = "SpriteSliceObj";
-		spriteSliceObj.gameObject.SetActive(true);
-		spriteSliceObj.transform.localScale = Vector3.one;
-		spriteSliceObj.transform.position = Vector3.zero;
+	void Start(){
+		InstantiateSpriteObj();
 	}
-	void DestroySprite(){
-		if (spriteSliceObj) {
-			GameObject.DestroyImmediate(spriteSliceObj);
-		}
+
+	IEnumerator OnSliceEnd(GameObject go1, GameObject go2, GameObject line){
+		DestroyImmediate(line);
+		yield return new WaitForSeconds(1f);
+		DestroyImmediate(spriteSliceObj);
+		DestroyImmediate(go1);
+		DestroyImmediate(go2);
+		yield return new WaitForSeconds(0.5f);
+		InstantiateSpriteObj();
 	}
-	void DestroyLine(){
-		GameObject line = GameObject.Find("line");
-		if (line){
-			GameObject.DestroyImmediate(line);
-		}
-	}
-	void DestroyPart(){
-		GameObject part = GameObject.Find("part");
-		if (part){
-			GameObject.DestroyImmediate(part);
-			DestroyPart();
-		}else{
-			return;
-		}
-	}
+
 }
