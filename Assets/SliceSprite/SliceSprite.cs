@@ -163,6 +163,7 @@ namespace MiaoKids {
 			return vertices;
 		}
 
+		// 计算UV标准点位置
 		void GetUVAttrubit(Vector2[] vertices){
 			List<Vector2> tmpVertices = new List<Vector2>(vertices);
 			tmpVertices.Sort((Vector2 a, Vector2 b) => {
