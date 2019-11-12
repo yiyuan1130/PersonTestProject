@@ -36,7 +36,7 @@ namespace MiaoKids
             float b_line2 = 0;
             GetLineEquation(line2, out k_line2, out b_line2);
 
-            if (k_line1 == b_line1){
+            if (k_line1 == k_line2){
                 // 直线平行
                 return false;
             }

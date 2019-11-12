@@ -156,7 +156,9 @@ namespace MiaoKids {
 			for (int i = 0; i < vertices.Length; i++)
 			{
 				Vector2 ver = vertices[i];
+				// 根据缩放重算顶点坐标
 				ver = new Vector2(ver.x * transform.localScale.x, ver.y * transform.localScale.y);
+				// 根据位置重算顶点坐标
 				ver = new Vector2(ver.x + transform.position.x, ver.y + transform.position.y);
 				vertices[i] = ver;
 			}
@@ -384,6 +386,7 @@ namespace MiaoKids {
 				meshTriangles[startIndex + 1] = i + 1;
 				meshTriangles[startIndex + 2] = i + 2;
 			}
+
 			
 			mesh.vertices = meshVertices;
 			mesh.uv = meshUv;
