@@ -3,23 +3,17 @@
 # =============== #
 
 Library/
+Library/*
 Temp/
 
 # Debug Temporary Files
 obj/
+obj/*
 
 # ====================== #
 # Unity Editor Generated #
 # ====================== #
 
-Assets/StreamingAssets/iOS*
-Assets/StreamingAssets/Android*
-Assets/StreamingAssets/Win*
-Assets/Resources/Lua*
-
-/Assets/Packages/miaokids-tolua/Source/Generate/*
-!/Assets/Packages/miaokids-tolua/Source/Generate/DelegateFactory.cs*
-!/Assets/Packages/miaokids-tolua/Source/Generate/LuaBinder.cs*
 Assets/StreamingAssets/build_info.txt
 
 # ===================================== #
@@ -51,9 +45,6 @@ Builds/
 /AssetBundles/*
 /Assets/Resources/PrefabsInBundles*
 /MIAOKIDSMATH/*
-/miaokids/*
-Assets/Game/Courses/ZhangCourse_Num31.meta~HEAD
-Assets/Game/Courses/ZhangCourse_Num31.meta~zhangcourse_num31_makeup10_qw
 
 # Generated using `npm install` command
 /node_modules/*
