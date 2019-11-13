@@ -12,38 +12,61 @@ namespace MiaoKids
             this.endPos = endPos;
         }
         // 计算直线方程参数 k b
-        public static void GetLineEquation(Line line, out float k, out float b){
+        // return 是否是竖直的线 垂直true 否则false
+        public static bool GetLineEquation(Line line, out float k, out float b){
             k = 0;
             b = 0;
-            k = (line.startPos.y - line.endPos.y) / (line.startPos.x - line.endPos.x);
-            b = line.startPos.y - k * line.startPos.x;
+            float durX = line.startPos.x - line.endPos.x;
+            float durY = line.startPos.y - line.endPos.y;
+            if (durX == 0){
+                return true;
+            }
+            else{
+                k = durY / durX;
+                b = line.startPos.y - k * line.startPos.x;
+                // k = (float)System.Math.Round(k, 2);
+                // b = (float)System.Math.Round(b, 2);
+                return false;
+            }
         }
 
         // 获取两条直线的交点
         // lin1,line2 : 
         public static bool GetIntersectionPoint(Line line1, Line line2, out Vector2 intersectionPoint){
-            intersectionPoint = Vector2.one; 
+            intersectionPoint = Vector2.one;
 
             // float k_line1 = (line1.startPos.y - line1.endPos.y) / (line1.startPos.x - line1.endPos.x);
             // float b_line1 = line1.startPos.y - k_line1 * line1.startPos.x;
             float k_line1 = 0;
             float b_line1 = 0;
-            GetLineEquation(line1, out k_line1, out b_line1);
+            bool isVertical1 = GetLineEquation(line1, out k_line1, out b_line1);
 
             // float k_line2 = (line2.startPos.y - line2.endPos.y) / (line2.startPos.x - line2.endPos.x);
             // float b_line2 = line2.startPos.y - k_line2 * line2.startPos.x;
             float k_line2 = 0;
             float b_line2 = 0;
-            GetLineEquation(line2, out k_line2, out b_line2);
+            bool isVertical2 = GetLineEquation(line2, out k_line2, out b_line2);
 
-            if (k_line1 == k_line2){
-                // 直线平行
+            if (isVertical1 && isVertical2){
+                // 两直线平行切都垂直于X轴
                 return false;
             }
             
+            if (k_line1 == k_line2)
+                // 直线平行
+                return false;
+
             float y = 0;
             float x = 0;
-            if (k_line2 == 0 && k_line1 != 0){
+            if (isVertical1){
+                x = line1.startPos.x;
+                y = k_line2 * x + b_line2;
+            }
+            else if (isVertical2){
+                x = line2.startPos.x;
+                y = k_line1 * x + b_line1;
+            }
+            else if (k_line2 == 0 && k_line1 != 0){
                 y = b_line2;
                 x = (y - b_line1) / k_line1;
             }
@@ -75,7 +98,6 @@ namespace MiaoKids
                 intersectionPoint = new Vector2(x, y);
                 return true;
             }
-
             return false;
         }
 
@@ -84,22 +106,35 @@ namespace MiaoKids
             pointPosDic["up"] = new List<Vector2>();
             pointPosDic["on"] = new List<Vector2>();
             pointPosDic["down"] = new List<Vector2>();
+            float k = 0;
+            float b = 0;
+            bool isVertical = GetLineEquation(line, out k, out b);
             for (int i = 0; i < points.Length; i++)
             {
                 Vector2 point = points[i];
-                float k = 0;
-                float b = 0;
-                GetLineEquation(line, out k, out b);
-                float realY = k * point.x + b;
-                // 保留两位小数判断位置
-                if (System.Math.Round(realY, 2) == System.Math.Round(point.y, 2)){
-                    pointPosDic["on"].Add(point);
+                if (isVertical){
+                    if (Mathf.Abs(point.x - line.startPos.x) <= 0.001f){
+                        pointPosDic["on"].Add(point);
+                    }
+                    else if (point.x < line.startPos.x){
+                        pointPosDic["down"].Add(point);
+                    }
+                    else if (point.x > line.startPos.x){
+                        pointPosDic["up"].Add(point);
+                    }
                 }
-                else if (System.Math.Round(realY, 2) < System.Math.Round(point.y, 2)){
-                    pointPosDic["up"].Add(point);
-                }
-                else if (System.Math.Round(realY, 2) > System.Math.Round(point.y, 2)) {
-                    pointPosDic["down"].Add(point);
+                else{
+                    float realY = k * point.x + b;
+                    // 保留两位小数判断位置
+                    if (Mathf.Abs(realY - point.y) <= 0.001f){
+                        pointPosDic["on"].Add(point);
+                    }
+                    else if (realY < point.y){
+                        pointPosDic["up"].Add(point);
+                    }
+                    else if (realY > point.y) {
+                        pointPosDic["down"].Add(point);
+                    }
                 }
             }
             return pointPosDic;
