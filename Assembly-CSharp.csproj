@@ -60,6 +60,9 @@
      <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
      <Compile Include="Assets\EventDispatcher\Dispatcher.cs" />
+     <Compile Include="Assets\LoopScrollView\LoopItemController.cs" />
+     <Compile Include="Assets\LoopScrollView\LoopScrollView.cs" />
+     <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
      <Compile Include="Assets\MessDraw\MeshDraw.cs" />
