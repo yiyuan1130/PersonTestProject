@@ -74,6 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0757553c9c4b52a23a72ac0d7d90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 114858342580196568}
+  icon: {fileID: 114770906379442398}
+  title: {fileID: 114829566840556672}
 --- !u!114 &114770906379442398
 MonoBehaviour:
   m_ObjectHideFlags: 1

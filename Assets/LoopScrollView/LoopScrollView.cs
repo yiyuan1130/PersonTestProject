@@ -12,6 +12,8 @@ namespace EamonnLi.LoopScrollView{
 		public GameObject loopObject;
 		RectTransform loopRt;
 
+		
+
 		int count;
 		public float spacing = 0;
 
@@ -21,17 +23,32 @@ namespace EamonnLi.LoopScrollView{
 		float rightPosOfContent = 0;
 		int currentIndex = 0;
 
+		List<ItemData> datas =  new List<ItemData>();
 		List<RectTransform> loopObjectsList = new List<RectTransform>();
 		void Awake(){
 			loopRt = loopObject.GetComponent<RectTransform>();
 		}
 
-		public void InitLoopScrollView(int count){
+		public void InitLoopScrollView(int count, List<ItemData> dataList){
 			this.count = count;
+			datas = dataList;
 			CreateContent();
 			CaculateMinCount();
 			CreateLoopObject();
+			UpdateContent();
 			scrollRect.onValueChanged.AddListener(OnScrolled);
+		}
+
+		void UpdateContent(){
+			for (int i = 0; i < loopObjectsList.Count; i++)
+			{
+				ItemData data = datas[i + leftIndex];
+				loopObjectsList[i].GetComponent<LoopItemController>().UpdateUI(data);
+			}
+			for (int i = leftIndex; i < rightIndex; i++)
+			{
+				
+			}
 		}
 
 		float contentWidth = 0f;
@@ -91,8 +108,11 @@ namespace EamonnLi.LoopScrollView{
 			// if (leftIndex <= 0 || rightIndex >= count - 1)
 			// 	return;
 			float currentValueX = value.x;
+			Debug.Log("count    +++ " + count + "    ____rightIndex " + rightIndex);
 			if (currentValueX > lastValuX){
 				// 手指往左滑动，content往左走，判断 loopObjectsList[0] 的右边是否出去
+				if (rightIndex >= count) 
+					return;
 				RectTransform rt = loopObjectsList[0];
 				float rtRightPos = rt.sizeDelta.x + rt.anchoredPosition.x;
 				if (rtRightPos < leftPosOfContent){
@@ -101,10 +121,13 @@ namespace EamonnLi.LoopScrollView{
 					SetPositionOfIndex(rt, rightIndex);
 					rightIndex += 1;
 					leftIndex += 1;
+					UpdateContent();
 				}
 			}
 			else if (currentValueX < lastValuX){
 				// 手指往右滑动，content往右走，判断 loopObjectsList[loopObjectsList.Count - 1];] 的左边是否出去
+				if (leftIndex <= 0) 
+					return;
 				RectTransform rt = loopObjectsList[loopObjectsList.Count - 1];
 				float rtLeftPos = rt.anchoredPosition.x;
 				if (rtLeftPos > rightPosOfContent){
@@ -113,6 +136,7 @@ namespace EamonnLi.LoopScrollView{
 					rightIndex -= 1;
 					leftIndex -= 1;
 					SetPositionOfIndex(rt, leftIndex);
+					UpdateContent();
 				}
 			}
 			lastValuX = currentValueX;

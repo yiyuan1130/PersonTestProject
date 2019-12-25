@@ -11,10 +11,12 @@ namespace EamonnLi.LoopScrollView{
 
 		public Text title;
 
-		public void UpdateUI(Sprite bgSprite, Sprite iconSprite, string tex){
-			background.sprite = bgSprite;
-			icon.sprite = iconSprite;
-			title.text = tex;
+		public void UpdateUI(ItemData data){
+			icon.gameObject.SetActive(false);
+			title.gameObject.SetActive(false);
+			background.sprite = data.bgSprite;
+			icon.color = new Color(data.index / 100.0f, 1 - data.index / 100.0f, 1, 1);
+			title.text = data.index.ToString();
 		}
 	}
 }

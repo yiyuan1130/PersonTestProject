@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/LoopScrollView/LoopScrollView.unity
+  isLoaded: 1
+  isActive: 1
