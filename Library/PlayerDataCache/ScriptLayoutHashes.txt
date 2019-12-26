@@ -1,8 +1,8 @@
 Android
 PlayerPath?
-/Users/liyiyuan/Desktop/cutsprite.apk
+/Users/liyiyuan/Desktop/codescanner.apk
 SceneListBegin?
-Assets/SliceSprite/SliceSpriite.unity
+Assets/CodeScan/CodeScan.unity
 SceneListEnd?
 b44b3c7e61d7a2bb08cca232ea0514e4 Assembly-CSharp.dll:.MeshDrawLine
 922dde826533f20a40eadb188df86725 Assembly-CSharp.dll:.TestReporter
@@ -118,6 +118,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 1cb40c746a01332eb78618e045b0b5a9 Assembly-CSharp.dll:.Reporter
+21ab2599823c5168e6dfd3dfc1363c93 Assembly-CSharp.dll:MiaoKids.SliceManager
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -125,6 +126,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+9ee9ee37d03b7395cd77bce4a561619a Assembly-CSharp.dll:EamonnLi.LoopScrollView.LoopItemController
 47d5c717f5e096dd09d525d51efad639 Assembly-CSharp.dll:.DownloadTextureReturnSprite
 fc5425de6d606ccad1a52602604c84a4 Assembly-CSharp.dll:.MeshDraw
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MiaoKids.MiaoKidsTime
@@ -161,9 +163,12 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+78f925a5471ac50c2e15a260b216bd3d Assembly-CSharp.dll:.TestUseLoopScrollView
 0f2c0b718b525fa321e2e2c67e0db332 Assembly-CSharp.dll:.AnimationCurveDemo
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 404bdfd2e600c0f672611fc1d737f8aa Assembly-CSharp.dll:.UnityWebRequestDemo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
+73725eaae4693b69e8dfe9e51245033a Assembly-CSharp.dll:EamonnLi.LoopScrollView.LoopScrollView
 81e512ce2cf85f48450bd61bc69bcb52 Assembly-CSharp.dll:.Reset
 44fbc54afec82b6498d4bde959a1864c Assembly-CSharp.dll:.Timer
+fd4b1a3fc7bceed775eb19fe62fbf003 Assembly-CSharp.dll:.CodeScanController

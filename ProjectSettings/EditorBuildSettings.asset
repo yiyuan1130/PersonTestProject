@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DownloadTextureReturnSprite/DownloadTextureReturnSprite.unity
     guid: 97c5ee6dcc0d24c01a1b50b9d65f5689
-  - enabled: 1
-    path: Assets/SliceSprite/CutSpriite.unity
+  - enabled: 0
+    path: Assets/SliceSprite/SliceSpriite.unity
     guid: 2a278ec9e6f824c7c82c4db4923f8b18
+  - enabled: 1
+    path: Assets/CodeScan/CodeScan.unity
+    guid: 34c2366f8eecb431fb23bd9b46b79b05

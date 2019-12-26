@@ -54,6 +54,7 @@
      <Compile Include="Assets\AnimationCurve\AnimationCurveDemo.cs" />
      <Compile Include="Assets\AStart\AStart.cs" />
      <Compile Include="Assets\AStart\AStartController.cs" />
+     <Compile Include="Assets\CodeScan\CodeScanController.cs" />
      <Compile Include="Assets\CopyContent\CopyContentController.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
      <Compile Include="Assets\DeviceInfos\DeviceInfo.cs" />
@@ -255,6 +256,9 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>/Users/liyiyuan/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="zxing.unity">
+ <HintPath>/Users/liyiyuan/Project/Unity/PersonTestProject/Assets/Plugins/zxing.unity.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
