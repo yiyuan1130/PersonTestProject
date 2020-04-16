@@ -1,6 +1,12 @@
 ﻿using UnityEngine.Events;
 using UnityEngine;
 
+public class CustomEventClass : MonoBehaviour{
+    public StartMoveEvent startMoveEvent;
+    public OnMoveEvent onMoveEvent;
+    public EndMoveEvent endMoveEvent;
+}
+
 // 开始移动事件
 public class StartMoveEvent : UnityEvent<GameObject, string> {}
 

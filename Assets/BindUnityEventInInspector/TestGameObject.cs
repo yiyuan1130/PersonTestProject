@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class TestGameObject : MonoBehaviour {
 
-	StartMoveEvent startMoveEvent = new StartMoveEvent();
-	OnMoveEvent onMoveEvent = new OnMoveEvent();
-	EndMoveEvent endMoveEvent = new EndMoveEvent();
+	public StartMoveEvent startMoveEvent = new StartMoveEvent();
+	public OnMoveEvent onMoveEvent = new OnMoveEvent();
+	public EndMoveEvent endMoveEvent = new EndMoveEvent();
 
 	static float startTime = 0f;
 
