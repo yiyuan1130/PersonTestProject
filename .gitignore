@@ -5,6 +5,7 @@
 Library/
 Library/*
 Temp/
+Library
 
 # Debug Temporary Files
 obj/
