@@ -84,7 +84,9 @@
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\UnityLogViewerTest\Scripts\UnityLogViewTest.cs" />
      <Compile Include="Assets\UnityWebRequest\UnityWebRequestDemo.cs" />
+     <None Include="Assets\EdgeHightLightShader\edgehightlight.shader" />
      <None Include="Assets\StreamingAssets\build_info.txt" />
+     <None Include="Assets\DynamicCreateUVTexture\dynamic_create_uv_tex.shader" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>D:/Unity2017.4.1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
