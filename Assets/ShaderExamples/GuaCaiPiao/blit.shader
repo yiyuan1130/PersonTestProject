@@ -1,10 +1,8 @@
-﻿Shader "Hidden/blit"
+﻿Shader "Learning/blit"
 {
 	Properties
 	{
-		// _CurrentRT ("CurrentRT", 2D) = "white" {}
-		// _PrevirousRT ("TargetRT", 2D) = "white" {}
-
+		_BrushWidth ("BrushWidth", int(1, 3)) = 2
 	}
 	SubShader
 	{
@@ -41,13 +39,14 @@
 			
 			sampler2D _CurrentRT;
 			sampler2D _PrevirousRT;
+			int _BrushWidth;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 cur = tex2D(_CurrentRT, i.uv);
 				fixed4 pre = tex2D(_PrevirousRT, i.uv);
 				float r = cur.r - pre.r;
-				return fixed4(r, 0, 0, 1);
+				return fixed4(r / _BrushWidth, 0, 0, 1);
 			}
 			ENDCG
 		}

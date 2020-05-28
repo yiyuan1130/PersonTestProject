@@ -65,7 +65,8 @@
 
 				float mask = tex2D(_BlitTex, i.paintPos).r;
                 float a = mask;
-				return fixed4(texcolor.rgb, 1- mask);
+				// return fixed4(texcolor.rgb, 1- mask);
+				return fixed4(texcolor.rgb, 1 - a);
             }
             ENDCG
 		}
