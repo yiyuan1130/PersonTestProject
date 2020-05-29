@@ -73,6 +73,7 @@
      <Compile Include="Assets\SceneLoad\SceneLoad.cs" />
      <Compile Include="Assets\SceneLoad\TestMonoBehaviour.cs" />
      <Compile Include="Assets\ShaderExamples\GuaCaiPiao\GuaCaiPiao.cs" />
+     <Compile Include="Assets\ShaderExamples\GuaCaiPiao\GuaCaiPiaoSub.cs" />
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\CameraController.cs" />
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\FaceUpdate.cs" />
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\IdleChanger.cs" />
