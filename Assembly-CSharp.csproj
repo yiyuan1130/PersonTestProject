@@ -59,6 +59,9 @@
      <Compile Include="Assets\CodeScan\CodeScanController.cs" />
      <Compile Include="Assets\CopyContent\CopyContentController.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
+     <Compile Include="Assets\DesktopPet\ChanController.cs" />
+     <Compile Include="Assets\DesktopPet\CubeMove.cs" />
+     <Compile Include="Assets\DesktopPet\WindowManager.cs" />
      <Compile Include="Assets\DeviceInfos\DeviceInfo.cs" />
      <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
@@ -104,6 +107,7 @@
      <None Include="Assets\ShaderExamples\LiuGuang\liuguang.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\license.txt" />
      <None Include="Assets\EdgeHighLightShader\edgehightlight.shader" />
+     <None Include="Assets\DesktopPet\MakeTransparent.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
