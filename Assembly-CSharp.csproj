@@ -61,7 +61,9 @@
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
      <Compile Include="Assets\DesktopPet\ChanController.cs" />
      <Compile Include="Assets\DesktopPet\CubeMove.cs" />
-     <Compile Include="Assets\DesktopPet\WindowManager.cs" />
+     <Compile Include="Assets\DesktopPet\popuxxx.cs" />
+     <Compile Include="Assets\DesktopPet\TransparentWindow.cs" />
+     <Compile Include="Assets\DesktopPet\WindowMod.cs" />
      <Compile Include="Assets\DeviceInfos\DeviceInfo.cs" />
      <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
@@ -98,6 +100,7 @@
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\UnityLogViewerTest\Scripts\UnityLogViewTest.cs" />
      <Compile Include="Assets\UnityWebRequest\UnityWebRequestDemo.cs" />
+     <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\ShaderExamples\GuaCaiPiao\guacaipiao.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
