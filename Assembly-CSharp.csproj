@@ -59,6 +59,7 @@
      <Compile Include="Assets\CodeScan\CodeScanController.cs" />
      <Compile Include="Assets\CopyContent\CopyContentController.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
+     <Compile Include="Assets\DesktopPet\CameraRotateAround.cs" />
      <Compile Include="Assets\DesktopPet\ChanController.cs" />
      <Compile Include="Assets\DesktopPet\CubeMove.cs" />
      <Compile Include="Assets\DesktopPet\popuxxx.cs" />

@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 240154118}
   - component: {fileID: 240154119}
   - component: {fileID: 240154120}
+  - component: {fileID: 240154121}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -244,6 +245,29 @@ MonoBehaviour:
   StartAuto: 1
   productName: desktop_pet
   CurDirection: 0
+--- !u!114 &240154121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240154113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25daf1b721a9590419cc750e4c5d6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 919452541}
+  distance: 2.8
+  distanceMax: 10
+  distanceMin: 1
+  xSpeed: 30
+  yMaxLimit: 60
+  yMinLimit: -10
+  ySpeed: 50
+  MouseScrollWheelSensitivity: 1
+  CollisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &427616284
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +412,10 @@ MonoBehaviour:
 --- !u!1 &919452540 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100178, guid: 40046bae76ac54bffb59f14f47d9ba1b, type: 2}
+  m_PrefabInternal: {fileID: 919452537}
+--- !u!4 &919452541 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400100, guid: 40046bae76ac54bffb59f14f47d9ba1b, type: 2}
   m_PrefabInternal: {fileID: 919452537}
 --- !u!1 &1101186800
 GameObject:
