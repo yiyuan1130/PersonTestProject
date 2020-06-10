@@ -63,6 +63,7 @@
      <Compile Include="Assets\DesktopPet\CubeMove.cs" />
      <Compile Include="Assets\DesktopPet\popuxxx.cs" />
      <Compile Include="Assets\DesktopPet\TransparentWindow.cs" />
+     <Compile Include="Assets\DesktopPet\UIController.cs" />
      <Compile Include="Assets\DesktopPet\WindowMod.cs" />
      <Compile Include="Assets\DeviceInfos\DeviceInfo.cs" />
      <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />

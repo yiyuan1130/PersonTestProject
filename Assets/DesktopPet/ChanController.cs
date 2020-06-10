@@ -23,8 +23,8 @@ public class ChanController : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-		if (Time.time - clickTime <= 0.25f){
-			int v = Random.Range(1, 10);
+		if (Time.time - clickTime <= 0.15f){
+			int v = Random.Range(1, 12);
 			animator.SetTrigger("ani");
 			animator.SetInteger("value", v);
 		}
