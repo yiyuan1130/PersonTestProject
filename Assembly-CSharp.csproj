@@ -77,6 +77,7 @@
      <Compile Include="Assets\MeshDraw\MeshDraw.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
      <Compile Include="Assets\RenderTexture\RTTest.cs" />
+     <Compile Include="Assets\SanTiMod\Contro.cs" />
      <Compile Include="Assets\SceneLoad\SceneLoad.cs" />
      <Compile Include="Assets\SceneLoad\TestMonoBehaviour.cs" />
      <Compile Include="Assets\ShaderExamples\GuaCaiPiao\GuaCaiPiao.cs" />
