@@ -93,6 +93,7 @@
      <Compile Include="Assets\SliceSprite\Reset.cs" />
      <Compile Include="Assets\SliceSprite\SliceManager.cs" />
      <Compile Include="Assets\SliceSprite\SliceSprite.cs" />
+     <Compile Include="Assets\SpeechRecognition\BaiduSpeechRecongnition.cs" />
      <Compile Include="Assets\SpeechRecognition\MicroPhoneManager.cs" />
      <Compile Include="Assets\SpeechRecognition\SpeechRecognition.cs" />
      <Compile Include="Assets\Timer\MiaoKidsTime.cs" />
