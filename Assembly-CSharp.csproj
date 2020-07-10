@@ -76,6 +76,7 @@
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDraw\MeshDraw.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
+     <Compile Include="Assets\NewPlayModeTest.cs" />
      <Compile Include="Assets\RenderTexture\RTTest.cs" />
      <Compile Include="Assets\SanTiMod\Contro.cs" />
      <Compile Include="Assets\SceneLoad\SceneLoad.cs" />
@@ -111,6 +112,7 @@
      <None Include="Assets\ShaderExamples\GuaCaiPiao\guacaipiao.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\ShaderExamples\test\clip.shader" />
+     <None Include="Assets\Transparent2D.shader" />
      <None Include="Assets\ShaderExamples\test\liuguang.shader" />
      <None Include="Assets\ShaderExamples\ReKongQi\rekongqi.shader" />
      <None Include="Assets\ShaderExamples\LiuGuang\liuguang.shader" />

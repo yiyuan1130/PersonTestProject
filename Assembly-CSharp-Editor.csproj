@@ -55,6 +55,7 @@
      <Compile Include="Assets\CreateLuaScripts\Editor\CreateLuaScripts.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\Editor\Tools.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\Editor\Tools.cs" />
+     <Compile Include="Assets\ReplaceMaterialWindow\Editor\ReplaceMaterialWindow.cs" />
      <Compile Include="Assets\SetBundleNameTest\Editor\Tools.cs" />
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
  <Reference Include="UnityEngine.CoreModule">
