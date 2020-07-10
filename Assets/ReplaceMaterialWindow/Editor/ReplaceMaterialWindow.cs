@@ -52,7 +52,7 @@ public class ReplaceMaterialWindow : EditorWindow {
 		if (GUILayout.Button("确定")){
 			GetMaterials();
 			ReplaceShader();
-			// AssetDatabase.SaveAssets();
+			AssetDatabase.SaveAssets();
 		}
     }
 
