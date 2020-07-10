@@ -50,24 +50,25 @@ public class ReplaceMaterialWindow : EditorWindow {
         }
 
 		if (GUILayout.Button("确定")){
-			ReplaceShader(GetMaterials());
+			GetMaterials();
+			ReplaceShader();
+			// AssetDatabase.SaveAssets();
 		}
     }
 
-	private List<Material> GetMaterials(){
-		List<Material> materialList = new List<Material>();
+
+	List<Material> materialList;
+	private void GetMaterials(){
+		materialList = new List<Material>();
 		for (int i = 0; i < AssetList.Count; i++)
 		{
 			UnityEngine.Object obj = AssetList[i];
-			Material material = GetMaterial(obj);
-			if (material != null){
-				materialList.Add(material);
-			}
+			EditorUtility.SetDirty(obj);
+			GetMaterial(obj);
 		}
-		return materialList;
 	}
 
-	private Material GetMaterial(UnityEngine.Object obj){
+	private void GetMaterial(UnityEngine.Object obj){
 		if (obj is UnityEditor.SceneAsset){
 			SceneAsset sceneAsset = obj as SceneAsset;
 			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetSceneByPath(AssetDatabase.GetAssetPath(obj));
@@ -78,20 +79,24 @@ public class ReplaceMaterialWindow : EditorWindow {
 			for (int i = 0; i < allGameObjects.Count; i++)
 			{
 				GameObject gameObject = allGameObjects[i];
-				return GetMaterial(gameObject);
+				GetMaterial(gameObject);
 			}
 		}else if (obj is GameObject){
 			GameObject go = obj as GameObject;
 			Renderer renderer = go.GetComponent<Renderer>();
-			if (renderer){
-				if (renderer.material){
-					return renderer.material;
+			ParticleSystem particleSystem = go.GetComponent<ParticleSystem>();
+			if (renderer && !particleSystem){
+				if (renderer.sharedMaterial){
+					int instanceID = renderer.sharedMaterial.GetInstanceID();
+					string objPath = AssetDatabase.GetAssetPath(instanceID);
+					UnityEngine.Object matObj = AssetDatabase.LoadAssetAtPath(objPath, typeof(Material));
+					if (matObj)
+						materialList.Add(matObj as Material);
 				}
 			}
 		}else if (obj is Material){
-			return obj as Material;
+			materialList.Add(obj as Material);
 		}
-		return null;
 	}
 
 	private void GetChild(GameObject gameObject, List<GameObject> allGameObjects){
@@ -106,12 +111,10 @@ public class ReplaceMaterialWindow : EditorWindow {
 		}
 	}
 
-
-
-	private void ReplaceShader(List<Material> materials){
-		for (int i = 0; i < materials.Count; i++)
+	private void ReplaceShader(){
+		for (int i = 0; i < materialList.Count; i++)
 		{
-			Material mat = materials[i];
+			Material mat = materialList[i];
 			mat.shader = Shader.Find("iHuman/Transparent2D");
 			EditorUtility.SetDirty(mat);
 		}	
