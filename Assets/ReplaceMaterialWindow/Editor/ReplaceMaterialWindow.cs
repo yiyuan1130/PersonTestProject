@@ -71,7 +71,7 @@ public class ReplaceMaterialWindow : EditorWindow {
 	private void GetMaterial(UnityEngine.Object obj){
 		if (obj is UnityEditor.SceneAsset){
 			SceneAsset sceneAsset = obj as SceneAsset;
-			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetSceneByPath(AssetDatabase.GetAssetPath(obj));
+			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetSceneByPath(AssetDatabase.GetAssetPath(sceneAsset));
 			GameObject[] rootGameObjects = scene.GetRootGameObjects();
 			List<GameObject> allGameObjects = new List<GameObject>();
 			for (int i = 0; i < rootGameObjects.Length; i++)
