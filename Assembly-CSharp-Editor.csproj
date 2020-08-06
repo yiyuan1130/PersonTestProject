@@ -288,14 +288,14 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{3EF461CC-B1A0-41C5-9A15-793714C3C9B9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="spine-unity-editor.csproj">
-      <Project>{E86452B3-32AD-613B-0087-CDCAFE77977F}</Project>      <Name>spine-unity-editor</Name>    </ProjectReference>
-    <ProjectReference Include="spine-unity-examples-editor.csproj">
-      <Project>{8962D648-DE9C-B283-61CE-11085EF8ACCB}</Project>      <Name>spine-unity-examples-editor</Name>    </ProjectReference>
-    <ProjectReference Include="spine-unity.csproj">
-      <Project>{03FB14FC-4E4B-5564-32BF-CE08A34843E7}</Project>      <Name>spine-unity</Name>    </ProjectReference>
     <ProjectReference Include="spine-unity-examples.csproj">
       <Project>{097FB989-B8BA-CBB9-84A5-2B867BFE0867}</Project>      <Name>spine-unity-examples</Name>    </ProjectReference>
+    <ProjectReference Include="spine-unity.csproj">
+      <Project>{03FB14FC-4E4B-5564-32BF-CE08A34843E7}</Project>      <Name>spine-unity</Name>    </ProjectReference>
+    <ProjectReference Include="spine-unity-examples-editor.csproj">
+      <Project>{8962D648-DE9C-B283-61CE-11085EF8ACCB}</Project>      <Name>spine-unity-examples-editor</Name>    </ProjectReference>
+    <ProjectReference Include="spine-unity-editor.csproj">
+      <Project>{E86452B3-32AD-613B-0087-CDCAFE77977F}</Project>      <Name>spine-unity-editor</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

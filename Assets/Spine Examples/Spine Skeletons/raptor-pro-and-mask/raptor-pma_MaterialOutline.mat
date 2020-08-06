@@ -4,12 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: raptor-pma_MaterialOutline
   m_Shader: {fileID: 4800000, guid: 28b5cf4804845fe4b868531fd0bb81d5, type: 3}
-  m_ShaderKeywords: _USE8NEIGHBOURHOOD_ON
+  m_ShaderKeywords: _STRAIGHT_ALPHA_INPUT _USE8NEIGHBOURHOOD_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,14 +24,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.1
-    - _OutlineMipLevel: 0
+    - _OutlineMipLevel: 1.16
     - _OutlineReferenceTexWidth: 1024
-    - _OutlineSmoothness: 1
-    - _OutlineWidth: 2.5
+    - _OutlineSmoothness: 0.222
+    - _OutlineWidth: 8
     - _StencilComp: 8
     - _StencilRef: 1
-    - _StraightAlphaInput: 0
-    - _ThresholdEnd: 0.25
+    - _StraightAlphaInput: 1
+    - _ThresholdEnd: 0.051
     - _Use8Neighbourhood: 1
     m_Colors:
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
