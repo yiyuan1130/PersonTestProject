@@ -14,7 +14,8 @@ function AStar:init()
     self.point = self.ground:Find("point")
     self.point.gameObject:SetActive(false)
     self:create_map()
-    self:do_serach()
+    self:add_click_event()
+    -- self:do_serach()
 end
 
 function AStar:button_step()
@@ -24,9 +25,34 @@ function AStar:button_step()
     end)
 end
 
+function AStar:add_click_event()
+    self.cur_set = "start"
+    for k,v in pairs(self.points) do
+        v.btn.onClick:AddListener(function()
+            -- if self.cur_set == "start" then
+            --     self.cur_set = "end"
+            --     local start_name = v.pos.x .. '-' .. v.pos.y
+            --     local id, start_point = self:find_point(start_name, self.points)
+            --     self.start_point = start_point
+            --     self.start_point.img.color = Color.green
+            -- elseif self.cur_set == "end" then
+                for k1, v1 in pairs(self.points) do
+                    v1.img.color = Color.white
+                end
+                local end_name = v.pos.x .. '-' .. v.pos.y
+                local id, end_point = self:find_point(end_name, self.points)
+                self.end_point = end_point
+                self.end_point.img.color = Color.red
+                self.cur_set = "start"
+                self:do_serach()
+            -- end
+        end)
+    end
+end
+
 function AStar:create_map()
     -- 27 * 15
-    self.startPos = {12, 5}
+    self.startPos = {14, 9}
     self.endPos = {22, 5}
     self.points = {}
     self.wall = {}
@@ -46,6 +72,7 @@ function AStar:create_map()
         local tex_H = pointObj.transform:Find("H"):GetComponent(typeof(Text))
         local tex_pos = pointObj.transform:Find("pos"):GetComponent(typeof(Text))
         tex_pos.text = string.format("%d,%d", x, y)
+        local button = pointObj.transform:Find("Button"):GetComponent(typeof(Button))
         
         local point = {
             name = name,
@@ -57,6 +84,7 @@ function AStar:create_map()
             tex_H = tex_H,
             tex_G = tex_G,
             img = img,
+            btn = button,
             root = nil,
         }
         
