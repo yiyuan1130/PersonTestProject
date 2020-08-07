@@ -36,9 +36,7 @@ function AStar:add_click_event()
             --     self.start_point = start_point
             --     self.start_point.img.color = Color.green
             -- elseif self.cur_set == "end" then
-                for k1, v1 in pairs(self.points) do
-                    v1.img.color = Color.white
-                end
+                self:reset_color()
                 local end_name = v.pos.x .. '-' .. v.pos.y
                 local id, end_point = self:find_point(end_name, self.points)
                 self.end_point = end_point
@@ -47,6 +45,12 @@ function AStar:add_click_event()
                 self:do_serach()
             -- end
         end)
+    end
+end
+
+function AStar:reset_color()
+    for k1, v1 in pairs(self.points) do
+        v1.img.color = Color.white
     end
 end
 
@@ -72,7 +76,7 @@ function AStar:create_map()
         local tex_H = pointObj.transform:Find("H"):GetComponent(typeof(Text))
         local tex_pos = pointObj.transform:Find("pos"):GetComponent(typeof(Text))
         tex_pos.text = string.format("%d,%d", x, y)
-        local button = pointObj.transform:Find("Button"):GetComponent(typeof(Button))
+        local btn = pointObj.transform:Find("Button"):GetComponent(typeof(Button))
         
         local point = {
             name = name,
@@ -84,7 +88,7 @@ function AStar:create_map()
             tex_H = tex_H,
             tex_G = tex_G,
             img = img,
-            btn = button,
+            btn = btn,
             root = nil,
         }
         
@@ -111,7 +115,7 @@ function AStar:create_map()
     end
 
     for k,v in pairs(self.wall) do
-        v.img.color = Color.black
+        v.img.color = Color.gray
     end
 
     local start_name = self.startPos[1] .. '-' .. self.startPos[2]
