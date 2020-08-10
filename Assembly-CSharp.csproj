@@ -110,6 +110,7 @@
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\UnityLogViewerTest\Scripts\UnityLogViewTest.cs" />
      <Compile Include="Assets\UnityWebRequest\UnityWebRequestDemo.cs" />
+     <Compile Include="Assets\UnsignedDistanceField\ShowAll.cs" />
      <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
      <Compile Include="Assets\XLua\Examples\01_Helloworld\Helloworld.cs" />
      <Compile Include="Assets\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
@@ -187,6 +188,7 @@
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+     <None Include="Assets\UnsignedDistanceField\unsigned_distance_field.shader" />
      <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
