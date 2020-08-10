@@ -106,12 +106,9 @@
 				}
 				else if (_Style == 1){
 					_PureWidth = 1 - _PureWidth;
-					if (udf_v > _PureWidth){
-						udf_v = 1.0;
-					}
 					clip(udf_v - _PureWidth);
 					udf_col.rgb = _PureColor.rgb;
-					udf_col.a = udf_v;
+					udf_col.a = 1;
 				}
 
 				if (udf_v == 0){
