@@ -110,7 +110,6 @@
 					udf_col.rgb = _PureColor.rgb;
 					udf_col.a = 1;
 				}
-
 				if (udf_v == 0){
 					udf_col = fixed4(0, 0, 0, 0);
 				}
