@@ -19,7 +19,7 @@
 		// r通道：第一笔
 		// g通道：第二笔
 		// b通道：第三笔
-		[Enum(All,0,First,1,Second,2,Third,3)]_Step("Step", int) = 0
+		[Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 0
 		
 		_PureWidth ("PureWidth", range(0, 1)) = 0.5
 
@@ -47,7 +47,7 @@
 			struct v2f
 			{
 				float2 uv : TEXCOORD0;
-				UNITY_FOG_COORDS(1)
+				// UNITY_FOG_COORDS(1)
 				float4 vertex : SV_POSITION;
 			};
 
@@ -76,9 +76,6 @@
 				float udf_v = 0;
 				// 选择笔画
 				switch (_Step){
-					case 0:
-						udf_v = udf_col.a;
-						break;
 					case 1:
 						udf_v = udf_col.r;
 						break;
@@ -88,27 +85,32 @@
 					case 3:
 						udf_v = udf_col.b;
 						break;
-					default:
+					case 4:
 						udf_v = udf_col.a;
+						break;
+					default:
+						udf_v = 0;
 						break;
 				}
 
 				// 选择样式
 				if (_Style == 0){
+					// 发光
 					float2 ramp_uv = TRANSFORM_TEX(float2(udf_v - _WidthIn, 0.5), _RampTex);
 					fixed4 out_col = tex2D(_RampTex, ramp_uv);
-					fixed4 col1 = tex2D(_RampTex, ramp_uv + float2(_WidthOut, _WidthOut));
-					fixed4 col2 = tex2D(_RampTex, ramp_uv + float2(-_WidthOut, _WidthOut));
-					fixed4 col3 = tex2D(_RampTex, ramp_uv + float2(_WidthOut, -_WidthOut));
-					fixed4 col4 = tex2D(_RampTex, ramp_uv + float2(-_WidthOut, -_WidthOut));
-					out_col = (col1 + col2 + col3 + col4 + out_col) / 5.0;
+					// fixed4 col1 = tex2D(_RampTex, ramp_uv + float2(_WidthOut, _WidthOut));
+					// fixed4 col2 = tex2D(_RampTex, ramp_uv + float2(-_WidthOut, _WidthOut));
+					// fixed4 col3 = tex2D(_RampTex, ramp_uv + float2(_WidthOut, -_WidthOut));
+					// fixed4 col4 = tex2D(_RampTex, ramp_uv + float2(-_WidthOut, -_WidthOut));
+					// out_col = (col1 + col2 + col3 + col4 + out_col) / 5.0;
 					udf_col.rgb = out_col.rgb;
 				}
 				else if (_Style == 1){
+					// 纯色
 					_PureWidth = 1 - _PureWidth;
 					clip(udf_v - _PureWidth);
-					udf_col.rgb = _PureColor.rgb;
 					udf_col.a = 1;
+					udf_col.rgb = _PureColor.rgb;
 				}
 				if (udf_v == 0){
 					udf_col = fixed4(0, 0, 0, 0);
