@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Style{
-	RIM = 0,
+	RAMP = 0,
 	PURE = 1,
 	Edge = 2,
 }
@@ -32,7 +32,7 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_sprite = value;
-			meshRenderer.sharedMaterial.SetTexture("_MainTex", _sprite.texture);
+			meshRenderer.material.SetTexture("_MainTex", _sprite.texture);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_style = value;
-			meshRenderer.sharedMaterial.SetInt("_Style", (int)_style);
+			meshRenderer.material.SetInt("_Style", (int)_style);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_ramp = value;
-			meshRenderer.sharedMaterial.SetTexture("_RampTex", _ramp);
+			meshRenderer.material.SetTexture("_RampTex", _ramp);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_step = value;
-			meshRenderer.sharedMaterial.SetInt("_Step", (int)_step);
+			meshRenderer.material.SetInt("_Step", (int)_step);
 		}
 	}
 
@@ -72,22 +72,25 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_color = value;
-			meshRenderer.sharedMaterial.SetVector("_Color", color);
+			meshRenderer.material.SetVector("_Color", color);
 		}
 	}
 
-	void Awake(){
+	void Reset(){
 		MeshFilter meshFilter = gameObject.GetComponent<MeshFilter>();
 		meshRenderer = gameObject.GetComponent<MeshRenderer>();
+		meshRenderer.sortingOrder = 10000;
 		meshFilter.mesh = GenMesh();
 
 #if UNITY_EDITOR
-		Material mat = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/UnsignedDistanceField/sdf_mat.mat", typeof(Material)) as Material;
-		Material material = Object.Instantiate(mat) as Material;
-		meshRenderer.sharedMaterial = material;
-		sprite = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/UnsignedDistanceField/udf/a_lower_sdf.png", typeof(Sprite)) as Sprite;
-		ramp = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/UnsignedDistanceField/ramp.png", typeof(Texture)) as Texture;;
-		style = Style.RIM;
+		if (Application.isPlaying)
+			return;
+		Material mat = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/sdf_mat_normal.mat", typeof(Material)) as Material;
+		// Material material = Object.Instantiate(mat) as Material;
+		meshRenderer.material = mat;
+		sprite = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/udf/a_lower_sdf.png", typeof(Sprite)) as Sprite;
+		ramp = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/ramp.png", typeof(Texture)) as Texture;;
+		style = Style.RAMP;
 		step = Step.ALL;
 		color = Color.red;
 #endif

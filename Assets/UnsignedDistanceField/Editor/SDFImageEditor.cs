@@ -2,17 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.Events;
+using System;
 
 [CustomEditor(typeof(SDFImage))]
+[CanEditMultipleObjects]
 public class SDFImageEditor : Editor {
 
 	SDFImage target;
+    UnityEngine.Object[] targets;
 
 	void Awake(){
-		target = (SDFImage)(serializedObject.targetObject);
+        targets = serializedObject.targetObjects;
+        Undo.undoRedoPerformed += onUndo;
 	}
 
+    void onUndo(){
+        ForeachTargets(() => {
+            target.sprite = target._sprite;
+            target.ramp = target._ramp;
+            target.color = target._color;
+            target.style = target._style;
+            target.step = target._step;
+        });
+    }
+
 	public override void OnInspectorGUI(){
+        targets = serializedObject.targetObjects;
+        if (!target)
+            target = (SDFImage)serializedObject.targetObject;
 
 		GUI_Sprite();
 
@@ -26,52 +44,65 @@ public class SDFImageEditor : Editor {
 	}
 	
 	void GUI_Sprite(){
-		target._sprite = EditorGUILayout.ObjectField("sprite - 距离场字母图", target._sprite, typeof(Sprite), false) as Sprite;
-		if (GUI.changed){
-			if (target._sprite != null){
-				target.material.SetTexture("_MainTex", target._sprite.texture);
-			}else{
-				target.material.SetTexture("_MainTex", null);
-			}
-		}
+        Sprite sprite = EditorGUILayout.ObjectField("sprite - 距离场字母图", target._sprite, typeof(Sprite), false) as Sprite;
+        if (GUI.changed){
+            ForeachTargets(() => {
+                Undo.RecordObject(target, "Changed");
+                target.sprite = sprite;
+            });
+        }
 	}
 
 	void GUI_Style(){
-		target._style = (Style)EditorGUILayout.EnumPopup("style - 字母样式", target._style);
+		Style style = (Style)EditorGUILayout.EnumPopup("style - 字母样式", target._style);
 		if (GUI.changed){
-			target.material.SetInt("_Style", (int)target._style);
+            ForeachTargets(() => {
+                Undo.RecordObject(target, "Changed");
+                target.style = style;
+            });
 		}
 	}
 
 	void GUI_Ramp(){
-		if (target._style != Style.RIM)
+		if (target._style != Style.RAMP)
 			return;
-		target._ramp = EditorGUILayout.ObjectField("ramp - 发光ramp图", target._ramp, typeof(Texture), false) as Texture;
+		Texture ramp = EditorGUILayout.ObjectField("ramp - 发光ramp图", target._ramp, typeof(Texture), false) as Texture;
 		if (GUI.changed){
-			if (target._ramp != null){
-				target.material.SetTexture("_RampTex", target._ramp);
-			}
-			else
-			{
-				target.material.SetTexture("_RampTex", null);
-			}
+            ForeachTargets(() => {
+                Undo.RecordObject(target, "Changed");
+                target.ramp = ramp;
+            });
 		}
 	}
 
 	void GUI_Color(){
-		if (target._style == Style.RIM)
+		if (target._style == Style.RAMP)
 			return;
-		target._color = EditorGUILayout.ColorField("color - 边缘或者纯色 颜色", target._color);
+		Color color = EditorGUILayout.ColorField("color - 边缘或者纯色 颜色", target._color);
 		if (GUI.changed){
-			target.material.SetVector("_Color", target._color);
+            ForeachTargets(() => {
+                Undo.RecordObject(target, "Changed");
+                target.color = color;
+            });
 		}
 	}
 
 	void GUI_Step(){
-		target._step = (Step)EditorGUILayout.EnumPopup("step - 笔画", target._step);
+		Step step = (Step)EditorGUILayout.EnumPopup("step - 笔画", target._step);
 		if (GUI.changed){
-			target.material.SetInt("_Step", (int)target._step);
+            ForeachTargets(() => {
+                Undo.RecordObject(target, "Changed");
+                target.step = step;
+            });
 		}
 	}
+
+    void ForeachTargets(Action fun){
+        for (int i = 0; i < targets.Length; i++)
+        {
+            target = (SDFImage)targets[i];
+            fun();
+        }
+    }
 	
 }

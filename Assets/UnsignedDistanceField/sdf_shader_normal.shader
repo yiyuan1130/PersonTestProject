@@ -2,21 +2,21 @@
 {
 	Properties
 	{
-		[PerRendererData] _MainTex ("Texture", 2D) = "white" {}
-		[PerRendererData] _Color ("Color", color) = (1, 0, 0, 1)
-		[PerRendererData] _RampTex ("RampTex", 2d) = "white" {}
+		_MainTex ("Texture", 2D) = "white" {}
+		_PureColor ("PureColor", color) = (1, 1, 1, 1)
+		_RampTex ("RampTex", 2d) = "white" {}
 
 		// 样式对应规则
 		// 0 发光
 		// 1 纯色
-		[PerRendererData] [Enum(Ramp,0,Pure,1,Edge,2)]_Style("Style", int) = 0
+		[Enum(Ramp,0,Pure,1,Edge,2)]_Style("Style", int) = 1
 
 		// 通道对应：1:r 2:g 3:b 4:a
 		// r通道：第一笔
 		// g通道：第二笔
 		// b通道：第三笔
 		// a通道：字母
-		[PerRendererData] [Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 0
+		[Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 4
 
 	}
 	SubShader
@@ -55,6 +55,7 @@
 			float4 _RampTex_ST;
 			int _Step;
 			int _Style;
+			fixed4 _PureColor;
 			fixed4 _Color;
 			
 			v2f vert (appdata v)
@@ -98,11 +99,11 @@
 				}
 				else if (_Style == 1){
 					// 纯色
-					udf_col = i.color * _Color;
+					udf_col = i.color * _PureColor;
 					clip(udf_v - 0.5);
 				}
 				else if (_Style == 2){
-					fixed4 c = i.color * _Color;
+					fixed4 c = i.color * _PureColor;
 					// 边缘
 					udf_col = abs(udf_v - 0.5) < 0.05 ? c : fixed4(0, 0, 0, 0);
 				}

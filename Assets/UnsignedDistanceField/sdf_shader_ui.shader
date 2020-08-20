@@ -4,8 +4,8 @@ Shader "iHuman/SDF/ui"
 {
     Properties
     {
-        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
-        [PerRendererData] _Color ("Tint", Color) = (1,1,1,1)
+        _MainTex ("Sprite Texture", 2D) = "white" {}
+        _Color ("Tint", Color) = (1,1,1,1)
 
         [PerRendererData] _StencilComp ("Stencil Comparison", Float) = 8
         [PerRendererData] _Stencil ("Stencil ID", Float) = 0
@@ -17,19 +17,19 @@ Shader "iHuman/SDF/ui"
 
         [PerRendererData] [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip ("Use Alpha Clip", Float) = 0
 
-		[PerRendererData] _RampTex ("RampTex", 2d) = "white" {}
+		_RampTex ("RampTex", 2d) = "white" {}
 
 		// 样式对应规则
 		// 0 发光
 		// 1 纯色
-		[PerRendererData] [Enum(Rim,0,Pure,1,Edge,2)]_Style("Style", int) = 0
+		[Enum(Ramp,0,Pure,1,Edge,2)]_Style("Style", int) = 1
 
 		// 通道对应：1:r 2:g 3:b 4:a
 		// r通道：第一笔
 		// g通道：第二笔
 		// b通道：第三笔
 		// a通道：字母
-		[PerRendererData] [Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 0
+		[Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 4
     }
 
     SubShader
@@ -152,12 +152,12 @@ Shader "iHuman/SDF/ui"
 					// 发光
 					float2 ramp_uv = TRANSFORM_TEX(float2(udf_v, 0.5), _RampTex);
 					fixed4 out_col = tex2D(_RampTex, ramp_uv);
-					udf_col.rgb = out_col.rgb;
-					udf_col.a = udf_v * out_col.a;
+					udf_col = out_col;
 				}
 				else if (_Style == 1){
 					// 纯色
-					udf_col = i.color * _Color;
+					// udf_col = i.color * _Color;
+                    udf_col = i.color;
 					clip(udf_v - 0.5);
 				}
 				else if (_Style == 2){

@@ -113,6 +113,7 @@
      <Compile Include="Assets\UnityWebRequest\UnityWebRequestDemo.cs" />
      <Compile Include="Assets\UnsignedDistanceField\SDFImage.cs" />
      <Compile Include="Assets\UnsignedDistanceField\SDFRenderer.cs" />
+     <Compile Include="Assets\UnsignedDistanceField\SDFText.cs" />
      <Compile Include="Assets\UnsignedDistanceField\ShowAll.cs" />
      <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
      <Compile Include="Assets\XLua\Examples\01_Helloworld\Helloworld.cs" />
@@ -184,6 +185,7 @@
      <None Include="Assets\UnsignedDistanceField\unsigned_distance_field.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\UnsignedDistanceField\sdf_shader_ui.shader" />
      <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Stage\Shader\AlphaMask.shader" />
@@ -192,8 +194,7 @@
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-     <None Include="Assets\UnsignedDistanceField\sdf.shader" />
-     <None Include="Assets\UnsignedDistanceField\sdf_ui.shader" />
+     <None Include="Assets\UnsignedDistanceField\sdf_shader_normal.shader" />
      <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
