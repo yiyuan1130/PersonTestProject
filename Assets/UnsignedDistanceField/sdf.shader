@@ -9,7 +9,7 @@
 		// 样式对应规则
 		// 0 发光
 		// 1 纯色
-		[PerRendererData] [Enum(Rim,0,Pure,1,Edge,2)]_Style("Style", int) = 0
+		[PerRendererData] [Enum(Ramp,0,Pure,1,Edge,2)]_Style("Style", int) = 0
 
 		// 通道对应：1:r 2:g 3:b 4:a
 		// r通道：第一笔
@@ -23,6 +23,7 @@
 	{
 		Tags { "RenderType"="Opaque" "Queue"="Transparent" }
 		Blend SrcAlpha oneMinusSrcAlpha
+		ZWrite Off
 		LOD 100
 
 		Pass
@@ -93,8 +94,7 @@
 					// 发光
 					float2 ramp_uv = TRANSFORM_TEX(float2(udf_v, 0.5), _RampTex);
 					fixed4 out_col = tex2D(_RampTex, ramp_uv);
-					udf_col.rgb = out_col.rgb;
-					udf_col.a = udf_v * out_col.a;
+					udf_col = out_col;
 				}
 				else if (_Style == 1){
 					// 纯色
