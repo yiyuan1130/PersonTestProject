@@ -59,6 +59,9 @@
      <Compile Include="Assets\ReplaceMaterialWindow\Editor\ReplaceMaterialWindow.cs" />
      <Compile Include="Assets\SetBundleNameTest\Editor\Tools.cs" />
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
+     <Compile Include="Assets\UnsignedDistanceField\Editor\CreateMesh.cs" />
+     <Compile Include="Assets\UnsignedDistanceField\Editor\SDFImageEditor.cs" />
+     <Compile Include="Assets\UnsignedDistanceField\Editor\SDFRendererEditor.cs" />
      <Compile Include="Assets\XLua\Editor\ExampleConfig.cs" />
      <Compile Include="Assets\XLua\Examples\13_BuildFromCLI\Editor\BuildFromCLI.cs" />
      <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />
