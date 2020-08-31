@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Style{
+public enum SDFStyle{
 	RAMP = 0,
 	PURE = 1,
-	Edge = 2,
+	EDGE = 2,
 }
-public enum Step{
+public enum SDFStep{
 	FIRST = 1,
 	SECOND = 2,
 	THIRD = 3,
@@ -18,13 +18,21 @@ public enum Step{
 [RequireComponent (typeof(MeshFilter))]
 public class SDFRenderer : MonoBehaviour {
 	public Sprite _sprite;
-	public Style _style = Style.PURE;
-	public Texture _ramp;
-	public Step _step = Step.ALL;
 	public Color _color = Color.white;
+	public SDFStyle _style = SDFStyle.PURE;
+	public Texture _ramp;
+	public SDFStep _step = SDFStep.ALL;
+	public Material _material;
 
-	[HideInInspector]
-	public MeshRenderer meshRenderer;
+	private Material _meshMaterial;
+	MeshRenderer _meshRenderer;
+	public MeshRenderer meshRenderer {
+		get {
+			if (_meshRenderer == null)
+				_meshRenderer = gameObject.GetComponent<MeshRenderer>();
+			return _meshRenderer;
+		}
+	}
 
 	public Sprite sprite {
 		get{
@@ -32,17 +40,20 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_sprite = value;
-			meshRenderer.material.SetTexture("_MainTex", _sprite.texture);
+			if (_sprite)
+				material.SetTexture("_MainTex", _sprite.texture);
+			else
+				material.SetTexture("_MainTex", null);
 		}
 	}
 
-	public Style style {
+	public SDFStyle style {
 		get{
 			return _style;
 		}
 		set{
 			_style = value;
-			meshRenderer.material.SetInt("_Style", (int)_style);
+			material.SetInt("_Style", (int)_style);
 		}
 	}
 
@@ -52,17 +63,20 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_ramp = value;
-			meshRenderer.material.SetTexture("_RampTex", _ramp);
+			if (ramp)
+				material.SetTexture("_RampTex", _ramp);
+			else
+				material.SetTexture("_RampTex", null);
 		}
 	}
 
-	public Step step {
+	public SDFStep step {
 		get{
 			return _step;
 		}
 		set{
 			_step = value;
-			meshRenderer.material.SetInt("_Step", (int)_step);
+			material.SetInt("_Step", (int)_step);
 		}
 	}
 
@@ -72,37 +86,53 @@ public class SDFRenderer : MonoBehaviour {
 		}
 		set{
 			_color = value;
-			meshRenderer.material.SetVector("_Color", color);
+			material.SetVector("_Color", color);
 		}
 	}
 
-	void Reset(){
-		MeshFilter meshFilter = gameObject.GetComponent<MeshFilter>();
-		meshRenderer = gameObject.GetComponent<MeshRenderer>();
-		meshRenderer.sortingOrder = 10000;
-		meshFilter.mesh = GenMesh();
+	public Material material {
+		get{
+            return _meshMaterial;
+		}
 
+        set{
+			_material = value;
+			if (_material){
+				_meshMaterial = GameObject.Instantiate(_material);
+				meshRenderer.material = _meshMaterial;
+			}
+			else{
+				_material = null;
+				meshRenderer.material = null;
+			}
+		}
+	}
+	void Awake() {
+		MeshFilter meshFilter = gameObject.GetComponent<MeshFilter>();
+		meshFilter.mesh = GenMesh();
+	}
+
+	void Update(){
 #if UNITY_EDITOR
-		if (Application.isPlaying)
-			return;
-		Material mat = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/sdf_mat_normal.mat", typeof(Material)) as Material;
-		// Material material = Object.Instantiate(mat) as Material;
-		meshRenderer.material = mat;
-		sprite = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/udf/a_lower_sdf.png", typeof(Sprite)) as Sprite;
-		ramp = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/unSignedDistanceField/ramp.png", typeof(Texture)) as Texture;;
-		style = Style.RAMP;
-		step = Step.ALL;
-		color = Color.red;
+		material = _material;
+		if (material){
+			style = _style;
+			ramp = _ramp;
+			step = _step;
+			sprite = _sprite;
+			color = _color;
+		}
 #endif
 	}
 
 	Mesh GenMesh(){
+		float halfWidth = 1100.0f / 100 / 2;
 		Mesh mesh = new Mesh();
 		mesh.vertices = new Vector3[]{
-			new Vector3(-0.5f, -0.5f, 0),
-			new Vector3(-0.5f, 0.5f, 0),
-			new Vector3(0.5f, 0.5f, 0),
-			new Vector3(0.5f, -0.5f, 0),
+			new Vector3(-halfWidth, -halfWidth, 0),
+			new Vector3(-halfWidth, halfWidth, 0),
+			new Vector3(halfWidth, halfWidth, 0),
+			new Vector3(halfWidth, -halfWidth, 0),
 		};
 		mesh.triangles = new int[]{
 			0, 1, 2,

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SDFText : MonoBehaviour {
 	public Sprite sprite;
 	public Texture ramp;
 	public Color color;
-	public Style style;
-	public Step step;
+	public SDFStyle style;
+	public SDFStep step;
 	public Material uiMaterial;
 	public Material rendererMaterial;
 	void OnGUI(){
@@ -15,9 +16,9 @@ public class SDFText : MonoBehaviour {
 			GameObject obj = new GameObject();
 			SDFImage sdfImage = obj.AddComponent<SDFImage>();
 			sdfImage.material = new Material(Shader.Find("iHuman/SDF/ui"));
-			sdfImage.sprite = sprite;
+			//sdfImage.sprite = sprite;
 			sdfImage.ramp = ramp;
-			sdfImage.color = color;
+			//sdfImage.color = color;
 			sdfImage.style = style;
 			sdfImage.step = step;
 			obj.transform.SetParent(GameObject.Find("Canvas").transform.GetChild(0));

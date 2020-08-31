@@ -310,6 +310,8 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{3EF461CC-B1A0-41C5-9A15-793714C3C9B9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{D57D9B23-BE57-42B8-27E9-947918131BE1}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="spine-unity-examples.csproj">
       <Project>{097FB989-B8BA-CBB9-84A5-2B867BFE0867}</Project>      <Name>spine-unity-examples</Name>    </ProjectReference>
     <ProjectReference Include="spine-unity.csproj">
