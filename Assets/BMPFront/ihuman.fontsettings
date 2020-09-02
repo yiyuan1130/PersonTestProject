@@ -7,23 +7,119 @@ Font:
   m_PrefabInternal: {fileID: 0}
   m_Name: ihuman
   serializedVersion: 5
-  m_LineSpacing: 0.1
-  m_DefaultMaterial: {fileID: 2100000, guid: f822aa40052c30340bf47e3dd6145130, type: 2}
-  m_FontSize: 0
+  m_LineSpacing: 286
+  m_DefaultMaterial: {fileID: 21255940159517236}
+  m_FontSize: 256
   m_Texture: {fileID: 0}
   m_AsciiStartOffset: 0
   m_Tracking: 1
-  m_CharacterSpacing: 0
+  m_CharacterSpacing: 10
   m_CharacterPadding: 1
   m_ConvertCase: 0
-  m_CharacterRects: []
+  m_CharacterRects:
+  - serializedVersion: 2
+    index: 0
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 1
+      width: 0
+      height: 0
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 232
+      width: 0
+      height: 0
+    advance: 0
+    flipped: 0
+  - serializedVersion: 2
+    index: 1
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0.76416016
+      width: 0.072753906
+      height: 0.13964844
+    vert:
+      serializedVersion: 2
+      x: 21
+      y: 232
+      width: 149
+      height: -286
+    advance: 192
+    flipped: 0
+  - serializedVersion: 2
+    index: 97
+    uv:
+      serializedVersion: 2
+      x: 0.07324219
+      y: 0.93603516
+      width: 0.06689453
+      height: 0.063964844
+    vert:
+      serializedVersion: 2
+      x: -10
+      y: 232
+      width: 137
+      height: -131
+    advance: 117
+    flipped: 0
+  - serializedVersion: 2
+    index: 98
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0.9038086
+      width: 0.07324219
+      height: 0.096191406
+    vert:
+      serializedVersion: 2
+      x: -10
+      y: 232
+      width: 150
+      height: -197
+    advance: 130
+    flipped: 0
   m_KerningValues: []
   m_PixelScale: 0.1
   m_FontData: 
-  m_Ascent: 0
-  m_Descent: 0
+  m_Ascent: 232
+  m_Descent: -54
   m_DefaultStyle: 0
   m_FontNames: []
   m_FallbackFonts: []
   m_FontRenderingMode: 0
   m_UseLegacyBoundsCalculation: 0
+--- !u!21 &21255940159517236
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Font Material
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: dbd5d29a293d3c84db5de7b0bdb955e9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}

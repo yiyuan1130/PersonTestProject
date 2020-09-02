@@ -92,6 +92,11 @@
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <Compile Include="Assets\SignedDistanceField\SDFImage.cs" />
+     <Compile Include="Assets\SignedDistanceField\SDFRenderer.cs" />
+     <Compile Include="Assets\SignedDistanceField\SDFText.cs" />
+     <Compile Include="Assets\SignedDistanceField\ShowAll.cs" />
+     <Compile Include="Assets\SignedDistanceField\TestSDFText.cs" />
      <Compile Include="Assets\SliceSprite\JudgeFigure.cs" />
      <Compile Include="Assets\SliceSprite\Line.cs" />
      <Compile Include="Assets\SliceSprite\Reset.cs" />
@@ -110,11 +115,8 @@
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\UnityLogViewerTest\Scripts\UnityLogViewTest.cs" />
+     <Compile Include="Assets\UnityPackages\JsonNetSample\JsonNetSample.cs" />
      <Compile Include="Assets\UnityWebRequest\UnityWebRequestDemo.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\SDFImage.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\SDFRenderer.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\SDFText.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\ShowAll.cs" />
      <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
      <Compile Include="Assets\XLua\Examples\01_Helloworld\Helloworld.cs" />
      <Compile Include="Assets\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
@@ -166,9 +168,9 @@
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
      <None Include="Assets\ShaderExamples\test\clip.shader" />
-     <None Include="Assets\BMPFront\a.fnt" />
      <None Include="Assets\Transparent2D.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+     <None Include="Assets\BMPFront\ihuman.fnt" />
      <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
      <None Include="Assets\ShaderExamples\test\liuguang.shader" />
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
@@ -183,10 +185,10 @@
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
-     <None Include="Assets\UnsignedDistanceField\unsigned_distance_field.shader" />
+     <None Include="Assets\SignedDistanceField\unsigned_distance_field.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-     <None Include="Assets\UnsignedDistanceField\sdf_shader_ui.shader" />
+     <None Include="Assets\SignedDistanceField\sdf_shader_ui.shader" />
      <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Stage\Shader\AlphaMask.shader" />
@@ -195,7 +197,7 @@
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-     <None Include="Assets\UnsignedDistanceField\sdf_shader_normal.shader" />
+     <None Include="Assets\SignedDistanceField\sdf_shader_normal.shader" />
      <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
@@ -377,6 +379,9 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

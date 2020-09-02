@@ -58,10 +58,10 @@
      <Compile Include="Assets\ForeachObjectsInEditor\Editor\ForeachObjectsInEditor.cs" />
      <Compile Include="Assets\ReplaceMaterialWindow\Editor\ReplaceMaterialWindow.cs" />
      <Compile Include="Assets\SetBundleNameTest\Editor\Tools.cs" />
+     <Compile Include="Assets\SignedDistanceField\Editor\CreateMesh.cs" />
+     <Compile Include="Assets\SignedDistanceField\Editor\SDFImageEditor.cs" />
+     <Compile Include="Assets\SignedDistanceField\Editor\SDFRendererEditor.cs" />
      <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\Editor\CreateMesh.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\Editor\SDFImageEditor.cs" />
-     <Compile Include="Assets\UnsignedDistanceField\Editor\SDFRendererEditor.cs" />
      <Compile Include="Assets\XLua\Editor\ExampleConfig.cs" />
      <Compile Include="Assets\XLua\Examples\13_BuildFromCLI\Editor\BuildFromCLI.cs" />
      <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />
@@ -282,6 +282,9 @@
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
@@ -305,6 +308,15 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
