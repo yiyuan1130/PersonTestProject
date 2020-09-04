@@ -171,7 +171,6 @@
      <None Include="Assets\ShaderExamples\test\clip.shader" />
      <None Include="Assets\Transparent2D.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
-     <None Include="Assets\BMPFront\ihuman.fnt" />
      <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
      <None Include="Assets\ShaderExamples\test\liuguang.shader" />
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
@@ -192,6 +191,7 @@
      <None Include="Assets\SignedDistanceField\sdf_shader_ui.shader" />
      <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\BMPFront\FZLANTYJD.fnt" />
      <None Include="Assets\ShaderExamples\UnityChan\Stage\Shader\AlphaMask.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\ShaderExamples\GuaCaiPiao\blit.shader" />
