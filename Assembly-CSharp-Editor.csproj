@@ -291,6 +291,9 @@
  <Reference Include="zxing.unity">
  <HintPath>E:/Project/GitHub/PersonTestProject/Assets/Plugins/zxing.unity.dll</HintPath>
  </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -308,9 +311,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>D:/Unity2017.4.39f1/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

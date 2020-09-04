@@ -58,6 +58,7 @@
      <Compile Include="Assets\AStart\Point.cs" />
      <Compile Include="Assets\BindUnityEventInInspector\CustomEvent\CustomEventClass.cs" />
      <Compile Include="Assets\BindUnityEventInInspector\TestGameObject.cs" />
+     <Compile Include="Assets\BMPFront\Editro\CaculatePadding.cs" />
      <Compile Include="Assets\CodeScan\CodeScanController.cs" />
      <Compile Include="Assets\CopyContent\CopyContentController.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
@@ -371,6 +372,9 @@
  <Reference Include="zxing.unity">
  <HintPath>E:/Project/GitHub/PersonTestProject/Assets/Plugins/zxing.unity.dll</HintPath>
  </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
  </Reference>
@@ -379,9 +383,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Eamonn/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>E:/Project/GitHub/PersonTestProject/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,9 @@
 		// a通道：字母
 		[Enum(First,1,Second,2,Third,3,All,4)]_Step("Step", int) = 4
 
+		_DistanceMark("DistanceMark", range(0,1)) = 1
+		_SmoothDelta("SmoothDelta", range(0,0.1)) = 0
+
 	}
 	SubShader
 	{
@@ -56,6 +59,8 @@
 			int _Step;
 			int _Style;
 			fixed4 _Color;
+			float _DistanceMark;
+			float _SmoothDelta;
 
 			v2f vert (appdata v)
 			{
@@ -84,6 +89,7 @@
 				else if (_Step == 4) {
 					udf_v = udf_col.a;
 				}
+				// udf_v = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
 
 
 				// 选择笔画
@@ -120,7 +126,7 @@
 				else if (_Style == 2){
 					fixed4 c = _Color;
 					// 边缘
-					udf_col = abs(udf_v - 0.5) < 0.05 ? c : fixed4(0, 0, 0, 0);
+					udf_col.a = abs(udf_v - 0.5) < 0.05 ? c : fixed4(0, 0, 0, 0);
 				}
 				else if (_Style == 3){
 					float2 _Offset = float2(0, 0.05);
@@ -130,6 +136,7 @@
 					udf_col = udf_col.a > board ? fixed4(1, 1, 1, 1) : fixed4(0, 0, 0, 0);
 					udf_col.rgb = lerp(udf_col.rgb, udf_col_2.rgb, 0.3);
 				}
+				udf_col.a = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
 				return udf_col;
 			}
 			ENDCG

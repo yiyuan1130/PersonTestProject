@@ -9,8 +9,15 @@ using UnityEditor;
 
 public class SDFText {
 	public GameObject gameObject;
+	public List<SDFImage> characters;
+
+	public Color color;
+	public SDFStyle style;
+	public float spacing;
 
 	public SDFText (string s, float spacing = 0f){
+		this.spacing = spacing;
+		characters = new List<SDFImage>();
 		char[] arr = s.ToCharArray();
 		GameObject sdfText = new GameObject("SdfText");
 
@@ -55,10 +62,20 @@ public class SDFText {
 			sDFImage.ramp = AssetDatabase.LoadAssetAtPath("Assets/SignedDistanceField/ramp.png", typeof(Texture)) as Texture;
 			sDFImage.style = SDFStyle.PURE;
 			sDFImage.color = Color.yellow;
+
+			characters.Add(sDFImage);
 		}
 
 		sdfText.transform.SetParent(GameObject.Find("Canvas").transform);
 		sdfText.transform.localPosition = Vector3.zero;
 		gameObject = sdfText;
+	}
+
+	public void Applay(){
+		for (int i = 0; i < characters.Count; i++)
+		{
+			characters[i].style = style;
+			characters[i].color = color;
+		}
 	}
 }
