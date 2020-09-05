@@ -116,12 +116,14 @@
 					// 发光
 					float2 ramp_uv = TRANSFORM_TEX(float2(udf_v, 0.5), _RampTex);
 					fixed4 out_col = tex2D(_RampTex, ramp_uv);
+					// udf_col.a = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
 					udf_col = out_col;
 				}
 				else if (_Style == 1){
 					// 纯色
 					udf_col = _Color;
-					clip(udf_v - 0.5);
+					udf_col.a = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
+					// clip(udf_v - 0.5);
 				}
 				else if (_Style == 2){
 					fixed4 c = _Color;
@@ -136,7 +138,7 @@
 					udf_col = udf_col.a > board ? fixed4(1, 1, 1, 1) : fixed4(0, 0, 0, 0);
 					udf_col.rgb = lerp(udf_col.rgb, udf_col_2.rgb, 0.3);
 				}
-				udf_col.a = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
+				// udf_col.a = smoothstep(_DistanceMark - _SmoothDelta, _DistanceMark + _SmoothDelta, udf_v);
 				return udf_col;
 			}
 			ENDCG
