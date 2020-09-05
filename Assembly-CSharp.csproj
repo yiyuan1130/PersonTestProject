@@ -95,9 +95,7 @@
      <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\SignedDistanceField\SDFImage.cs" />
      <Compile Include="Assets\SignedDistanceField\SDFRenderer.cs" />
-     <Compile Include="Assets\SignedDistanceField\SDFText.cs" />
      <Compile Include="Assets\SignedDistanceField\ShowAll.cs" />
-     <Compile Include="Assets\SignedDistanceField\TestSDFText.cs" />
      <Compile Include="Assets\SliceSprite\JudgeFigure.cs" />
      <Compile Include="Assets\SliceSprite\Line.cs" />
      <Compile Include="Assets\SliceSprite\Reset.cs" />
@@ -185,10 +183,9 @@
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
-     <None Include="Assets\SignedDistanceField\unsigned_distance_field.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-     <None Include="Assets\SignedDistanceField\sdf_shader_ui.shader" />
+     <None Include="Assets\SignedDistanceField\shaders\sdf_shader_ui.shader" />
      <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\BMPFront\FZLANTYJD.fnt" />
@@ -198,7 +195,8 @@
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-     <None Include="Assets\SignedDistanceField\sdf_shader_normal.shader" />
+     <None Include="Assets\SignedDistanceField\shaders\sdf_shader_shadow.shader" />
+     <None Include="Assets\SignedDistanceField\shaders\sdf_shader_normal.shader" />
      <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
