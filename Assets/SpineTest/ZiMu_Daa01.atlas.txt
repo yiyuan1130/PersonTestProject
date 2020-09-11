@@ -1,0 +1,195 @@
+
+ZiMu_Daa01.png
+size: 1460,1460
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A
+  rotate: false
+  xy: 0, 296
+  size: 1075, 1164
+  orig: 1075, 1164
+  offset: 0, 0
+  index: -1
+biyan
+  rotate: true
+  xy: 1375, 927
+  size: 197, 68
+  orig: 197, 68
+  offset: 0, 0
+  index: -1
+biyanzui
+  rotate: true
+  xy: 954, 0
+  size: 77, 58
+  orig: 77, 58
+  offset: 0, 0
+  index: -1
+bukaixin
+  rotate: true
+  xy: 1206, 699
+  size: 195, 166
+  orig: 195, 166
+  offset: 0, 0
+  index: -1
+daiji    yanbai
+  rotate: true
+  xy: 958, 104
+  size: 190, 107
+  orig: 190, 107
+  offset: 0, 0
+  index: -1
+daiji    zui
+  rotate: true
+  xy: 417, 77
+  size: 88, 51
+  orig: 88, 51
+  offset: 0, 0
+  index: -1
+daxiao
+  rotate: false
+  xy: 777, 79
+  size: 179, 215
+  orig: 179, 215
+  offset: 0, 0
+  index: -1
+fagu
+  rotate: false
+  xy: 1077, 1126
+  size: 371, 334
+  orig: 372, 334
+  offset: 0, 0
+  index: -1
+jingya
+  rotate: false
+  xy: 1206, 896
+  size: 167, 228
+  orig: 167, 228
+  offset: 0, 0
+  index: -1
+kaixin
+  rotate: false
+  xy: 1077, 284
+  size: 170, 174
+  orig: 170, 174
+  offset: 0, 0
+  index: -1
+ku   biyan
+  rotate: true
+  xy: 1243, 517
+  size: 180, 138
+  orig: 180, 138
+  offset: 0, 0
+  index: -1
+ku   yanbaizui
+  rotate: true
+  xy: 1067, 109
+  size: 173, 182
+  orig: 173, 182
+  offset: 0, 0
+  index: -1
+ku   yuanpi
+  rotate: false
+  xy: 777, 5
+  size: 175, 72
+  orig: 175, 72
+  offset: 0, 0
+  index: -1
+shengqi
+  rotate: false
+  xy: 1249, 339
+  size: 167, 176
+  orig: 167, 176
+  offset: 0, 0
+  index: -1
+tongyong   a
+  rotate: false
+  xy: 320, 101
+  size: 95, 64
+  orig: 95, 64
+  offset: 0, 0
+  index: -1
+tongyong   e
+  rotate: false
+  xy: 1251, 108
+  size: 92, 54
+  orig: 92, 54
+  offset: 0, 0
+  index: -1
+tongyong   i
+  rotate: false
+  xy: 1345, 105
+  size: 80, 57
+  orig: 80, 57
+  offset: 0, 0
+  index: -1
+tongyong   o
+  rotate: false
+  xy: 320, 24
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+tongyong   u
+  rotate: false
+  xy: 1014, 21
+  size: 46, 81
+  orig: 46, 81
+  offset: 0, 0
+  index: -1
+yihuo
+  rotate: true
+  xy: 1251, 164
+  size: 173, 162
+  orig: 173, 162
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: true
+  xy: 1077, 645
+  size: 479, 127
+  orig: 479, 127
+  offset: 0, 0
+  index: -1
+youtui
+  rotate: true
+  xy: 482, 22
+  size: 272, 293
+  orig: 272, 294
+  offset: 0, 1
+  index: -1
+youyanhei2
+  rotate: false
+  xy: 1375, 885
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+yun
+  rotate: true
+  xy: 1077, 460
+  size: 183, 164
+  orig: 183, 164
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 0, 167
+  size: 480, 127
+  orig: 480, 127
+  offset: 0, 0
+  index: -1
+zuotui
+  rotate: true
+  xy: 0, 8
+  size: 157, 318
+  orig: 157, 319
+  offset: 0, 1
+  index: -1
+zuoyanhei1
+  rotate: false
+  xy: 1374, 843
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1

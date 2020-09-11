@@ -77,6 +77,7 @@
      <Compile Include="Assets\LoopScrollView\LoopItemController.cs" />
      <Compile Include="Assets\LoopScrollView\LoopScrollView.cs" />
      <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
+     <Compile Include="Assets\MagicCube\MagicCube.cs" />
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDraw\MeshDraw.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
@@ -104,6 +105,8 @@
      <Compile Include="Assets\SpeechRecognition\BaiduSpeechRecongnition.cs" />
      <Compile Include="Assets\SpeechRecognition\MicroPhoneManager.cs" />
      <Compile Include="Assets\SpeechRecognition\SpeechRecognition.cs" />
+     <Compile Include="Assets\SpineTest\SpineTestPause.cs" />
+     <Compile Include="Assets\SplitMesh\SplitMesh.cs" />
      <Compile Include="Assets\Timer\MiaoKidsTime.cs" />
      <Compile Include="Assets\Timer\Timer.cs" />
      <Compile Include="Assets\UIFriction\UIFriction.cs" />
@@ -170,7 +173,9 @@
      <None Include="Assets\Transparent2D.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
      <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
+     <None Include="Assets\SpineTest\ZiMu_Daa01.atlas.txt" />
      <None Include="Assets\ShaderExamples\test\liuguang.shader" />
+     <None Include="Assets\MagicCube\magic_cube.shader" />
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
      <None Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
      <None Include="Assets\ShaderExamples\ReKongQi\rekongqi.shader" />
@@ -188,6 +193,7 @@
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_ui.shader" />
      <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\SignedDistanceField\shaders\sdf_shader_thick.shader" />
      <None Include="Assets\BMPFront\FZLANTYJD.fnt" />
      <None Include="Assets\ShaderExamples\UnityChan\Stage\Shader\AlphaMask.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
