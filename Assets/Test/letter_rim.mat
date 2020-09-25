@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sdf_mat_normal
-  m_Shader: {fileID: 4800000, guid: 1e58bf0d0179ece48868c20d5ed22cfd, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _STEP_ALL
+  m_Name: letter_rim
+  m_Shader: {fileID: 4800000, guid: d4459d35a5f67ba4796b3190cbc95d04, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,10 +20,6 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CampTex:
-        m_Texture: {fileID: 2800000, guid: 76e94796639bd2f44abfa32d1a5cc650, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 89b156fdff5274f478e529527a4f844f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 42dc1e836cafd65409d986a756e5cd70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,38 +54,29 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RampTex:
-        m_Texture: {fileID: 2800000, guid: 3c2762f943e7285499e34c6b2c34b9ed, type: 3}
+    - _ShowTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DistanceMark: 0.5
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _MyEnum: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PureWidth: 0.5
-    - _SmoothDelta: 0.0087
+    - _Radio: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Step: 4
-    - _Style: 0
     - _UVSec: 0
-    - _Val1: 0
-    - _Val2: 0.85
-    - _WidthIn: 0
-    - _WidthOut: 0
+    - _Value: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PureColor: {r: 1, g: 1, b: 1, a: 1}

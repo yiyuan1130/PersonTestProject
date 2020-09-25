@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Panel{
+	Vector3 normal;
+}
+
 public class SplitMesh : MonoBehaviour {
 
 	public LineRenderer lineRenderer;
@@ -46,13 +50,15 @@ public class SplitMesh : MonoBehaviour {
         return Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, normardir.magnitude));
     }
 
-	public void CreatePanel(){
+	void CreatePanel(){
 		Vector3 p1 = panelStartPos;
 		Vector3 p2 = panelEndPos;
 		Vector3 dir = p2 - Camera.main.transform.position;
         Vector3 normardir = Vector3.Project(dir, Camera.main.transform.forward);
 		Vector3 p3 = p2 + normardir;
+	}
 
-		
+	void SplitVertices(){
+		Mesh mesh = cube.GetComponent<MeshFilter>().mesh;
 	}
 }

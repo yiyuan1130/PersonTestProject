@@ -74,6 +74,7 @@
      <Compile Include="Assets\DynamicCreateSprite\DynamicCreateSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
      <Compile Include="Assets\EventDispatcher\Dispatcher.cs" />
+     <Compile Include="Assets\LetterStrokes\StrokesTest.cs" />
      <Compile Include="Assets\LoopScrollView\LoopItemController.cs" />
      <Compile Include="Assets\LoopScrollView\LoopScrollView.cs" />
      <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
@@ -179,6 +180,7 @@
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
      <None Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
      <None Include="Assets\ShaderExamples\ReKongQi\rekongqi.shader" />
+     <None Include="Assets\Test\test.shader" />
      <None Include="Assets\ShaderExamples\LiuGuang\liuguang.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\license.txt" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
@@ -200,6 +202,7 @@
      <None Include="Assets\ShaderExamples\GuaCaiPiao\blit.shader" />
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\LetterStrokes\strokes.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_shadow.shader" />
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_normal.shader" />

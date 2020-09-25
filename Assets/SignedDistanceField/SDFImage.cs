@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
 
 [ExecuteInEditMode]
 [RequireComponent (typeof(Image))]
@@ -30,11 +31,11 @@ public class SDFImage : MonoBehaviour {
 		set{
 			_sprite = value;
 			if (_sprite){
-                _image.sprite = _sprite;
+                image.sprite = _sprite;
 				material.SetTexture("_MainTex", _sprite.texture);
             }
             else{
-                _image.sprite = null;
+                image.sprite = null;
 				material.SetTexture("_MainTex", null);
             }
 		}
@@ -86,6 +87,9 @@ public class SDFImage : MonoBehaviour {
 
 	public Material material {
 		get{
+			if (_imageMaterial == null){
+				_imageMaterial = GameObject.Instantiate(_material);
+			}
             return _imageMaterial;
 		}
 
@@ -101,18 +105,18 @@ public class SDFImage : MonoBehaviour {
 	}
 	void Awake() {
 		_image = GetComponent<Image>();
+		material = _material;
 	}
 	void Update(){
 #if UNITY_EDITOR
 		material = _material;
-        if (material){
-
-            style = _style;
-            ramp = _ramp;
-            step = _step;
-            sprite = _sprite;
-            color = _color;
-        }
+		if (material){
+			style = _style;
+			ramp = _ramp;
+			step = _step;
+			sprite = _sprite;
+			color = _color;
+		}
 #endif
 	}
 }
