@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AnimationCurve\AnimationCurveDemo.cs" />
      <Compile Include="Assets\AssetBundle\AssetBundleBuilder.cs" />
      <Compile Include="Assets\AStart\AStarController.cs" />
      <Compile Include="Assets\AStart\AStarMain.cs" />
@@ -59,8 +58,12 @@
      <Compile Include="Assets\BindUnityEventInInspector\CustomEvent\CustomEventClass.cs" />
      <Compile Include="Assets\BindUnityEventInInspector\TestGameObject.cs" />
      <Compile Include="Assets\BMPFront\Editro\CaculatePadding.cs" />
+     <Compile Include="Assets\CameraTrans\CameraTrans.cs" />
+     <Compile Include="Assets\CameraTrans\Cure.cs" />
+     <Compile Include="Assets\CameraTrans\DoRender.cs" />
      <Compile Include="Assets\CodeScan\CodeScanController.cs" />
      <Compile Include="Assets\CopyContent\CopyContentController.cs" />
+     <Compile Include="Assets\CreateAnimationCurve\AnimationCurveAsset.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\CreatePrefabInRunTime.cs" />
      <Compile Include="Assets\DesktopPet\CameraRotateAround.cs" />
      <Compile Include="Assets\DesktopPet\ChanController.cs" />
@@ -74,6 +77,9 @@
      <Compile Include="Assets\DynamicCreateSprite\DynamicCreateSprite.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\EditorRightButtonCreateObj.cs" />
      <Compile Include="Assets\EventDispatcher\Dispatcher.cs" />
+     <Compile Include="Assets\Genetic\Example1\GeneticExm1.cs" />
+     <Compile Include="Assets\Genetic\Example1\LuaTimer.cs" />
+     <Compile Include="Assets\Genetic\Example1\RandomMap.cs" />
      <Compile Include="Assets\LetterStrokes\StrokesTest.cs" />
      <Compile Include="Assets\LoopScrollView\LoopItemController.cs" />
      <Compile Include="Assets\LoopScrollView\LoopScrollView.cs" />
@@ -187,6 +193,7 @@
      <None Include="Assets\Test\test.shader" />
      <None Include="Assets\ShaderExamples\LiuGuang\liuguang.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\license.txt" />
+     <None Include="Assets\CameraTrans\camera_trans.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
      <None Include="Assets\EdgeHighLightShader\edgehightlight.shader" />
      <None Include="Assets\DesktopPet\MakeTransparent.shader" />

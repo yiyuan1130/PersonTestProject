@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BindUnityEventInInspector\CustomEvent\Editor\MonoStartEventInspector.cs" />
+     <Compile Include="Assets\CreateAnimationCurve\Editor\CreateAnimationCurve.cs" />
      <Compile Include="Assets\CreateLuaScripts\Editor\CreateLuaScripts.cs" />
      <Compile Include="Assets\CreatePrefabInRunTime\Editor\Tools.cs" />
      <Compile Include="Assets\EditorRightButtonCreateObj\Editor\Tools.cs" />
