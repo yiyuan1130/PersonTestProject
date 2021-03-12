@@ -88,7 +88,6 @@
      <Compile Include="Assets\Mesh\MeshTest.cs" />
      <Compile Include="Assets\MeshDraw\MeshDraw.cs" />
      <Compile Include="Assets\MeshDrawLine\MeshDrawLine.cs" />
-     <Compile Include="Assets\NewPlayModeTest.cs" />
      <Compile Include="Assets\RenderTexture\RTTest.cs" />
      <Compile Include="Assets\SanTiMod\Contro.cs" />
      <Compile Include="Assets\SceneLoad\SceneLoad.cs" />
@@ -183,7 +182,6 @@
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
      <None Include="Assets\ShaderExamples\test\clip.shader" />
-     <None Include="Assets\Transparent2D.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
      <None Include="Assets\Water2D\water_mix.shader" />
      <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
