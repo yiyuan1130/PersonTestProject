@@ -3,7 +3,8 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_Color ("_Color", color) = (1, 1, 1, 1)
+		_Color ("Color", color) = (1, 1, 1, 1)
+		_MidVal("MinVal", range(0, 1)) = 0.1
 	}
 	SubShader
 	{
@@ -39,6 +40,7 @@
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
 			fixed4 _Color;
+			float _MidVal;
 			
 			v2f vert (appdata v)
 			{
@@ -52,7 +54,7 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				float4 col = tex2D(_MainTex, i.uv);  
-				if(col.a>0.1){  
+				if(col.a>_MidVal){  
 					// col.a=0.5;  
 					// col.b=floor((col.b*10)*0.5)*0.5;
 					col.a = floor((col.a*1000)*0.9);
