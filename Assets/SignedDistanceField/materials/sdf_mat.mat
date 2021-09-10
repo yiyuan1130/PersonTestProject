@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: sdf_mat
   m_Shader: {fileID: 4800000, guid: 22b9c55cf6750f242bba8e26926f43f2, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -76,3 +77,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowOffset: {r: -0.01, g: 0.01, b: 0, a: 0}
+  m_BuildTextureStacks: []

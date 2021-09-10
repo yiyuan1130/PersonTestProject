@@ -6,10 +6,125 @@ using UnityEditor;
 
 public class MagicCube : MonoBehaviour {
 	public Material material;
+	public GameObject cube;
 
+	//Dictionary<Transform, Vector3> cubeMap = new Dictionary<Transform, Vector3>();
+
+	List<Transform> cubeList = new List<Transform>();
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
+		CreateMagicCube();
+	}
+
+	void CreateMagicCube() {
+		for (int x = 0; x < 3; x++)
+		{
+			for (int y = 0; y < 3; y++)
+			{
+				for (int z = 0; z < 3; z++)
+				{
+					float pos_x = (x - 1) * 3;
+					float pos_y = (y - 1) * 3;
+					float pos_z = (z - 1) * 3;
+					Transform cubeTransform = GameObject.Instantiate(cube).transform;
+					cubeTransform.position = new Vector3(pos_x, pos_y, pos_z);
+					cubeList.Add(cubeTransform);
+				}
+			}
+		}
+	}
+
+	Vector3 clickDownPos;
+	Vector3 offset;
+	Transform selectTransform;
+	List<Transform> rotateTransforms;
+	float curAngle = 0f;
+	int dir = 1;
+	bool rotating = false;
+	Vector3 aix;
+	private void Update()
+    {
+		if (rotating) {
+			Debug.Log("============== curAngle ===> " + curAngle);
+			if (Mathf.Abs(curAngle) >= 90f) {
+				rotating = false;
+			}
+			float speed = Time.deltaTime * 200f * dir;
+			curAngle = curAngle + speed;
+			if (Mathf.Abs(Mathf.Abs(curAngle) - 90f) <= 1f) {
+				curAngle = 90f * dir;
+			}
+			for (int i = 0; i < rotateTransforms.Count; i++) {
+				rotateTransforms[i].RotateAround(Vector3.zero, aix, speed);
+			}
+		}
+		if (!rotating && Input.GetMouseButtonDown(0)) {
+			rotateTransforms.Clear();
+			selectTransform = null;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit)) {
+                for (int i = 0; i < cubeList.Count; i++)
+                {
+					if (cubeList[i] == hit.transform) {
+						selectTransform = hit.transform;
+						clickDownPos = Input.mousePosition;
+						break;
+					}
+				}
+			}
+		}
+		if (!rotating && Input.GetMouseButtonUp(0)) {
+			rotateTransforms = new List<Transform>();
+			offset = (Input.mousePosition - clickDownPos);
+			if (Mathf.Abs(offset.x) > Mathf.Abs(offset.y)) {
+                foreach (var cube in cubeList)
+                {
+					Vector3 pos = cube.position;
+					if (Mathf.Abs(pos.y - selectTransform.position.y) < 0.5f) {
+						rotateTransforms.Add(cube);
+					}
+				}
+				curAngle = 0;
+				aix = Vector3.up;
+				rotating = true;
+				if (offset.x < 0)
+				{
+					dir = 1;
+				}
+				else
+				{
+					dir = -1;
+				}
+				Debug.Log("横向 ==> " + offset.x);
+				// 横向
+			} else {
+				Debug.Log("纵向");
+				foreach (var cube in cubeList)
+				{
+					Vector3 pos = cube.position;
+					if (Mathf.Abs(pos.x - selectTransform.position.x) < 0.5f)
+					{
+						rotateTransforms.Add(cube);
+					}
+				}
+				curAngle = 0;
+				rotating = true;
+				aix = Vector3.right;
+				if (offset.y < 0)
+				{
+					dir = -1;
+				}
+				else {
+					dir = 1;
+				}
+			}
+		}
+    }
+
+
+    void CreateCube(){
 		Mesh mesh = GenMesh();
 		GameObject obj = new GameObject("cube");
 		obj.AddComponent<MeshFilter>().mesh = mesh;
@@ -17,15 +132,7 @@ public class MagicCube : MonoBehaviour {
 		SaveMesh(mesh);
 		SavePrefab(obj);
 	}
-	
-	void CreateCube(){
 
-	}
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	Mesh GenMesh(){
 		Mesh mesh = new Mesh();
