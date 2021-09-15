@@ -144,6 +144,7 @@
     <Compile Include="Assets\XLua\Src\SignatureLoader.cs" />
     <Compile Include="Assets\DynamicCreateSprite\DynamicCreateSprite.cs" />
     <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
+    <Compile Include="Assets\Suduku\Suduku.cs" />
     <Compile Include="Assets\UIFriction\UIFriction.cs" />
     <Compile Include="Assets\LoopScrollView\LoopItemController.cs" />
     <Compile Include="Assets\XLua\Src\ObjectTranslator.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Assets\SpeechRecognition\BaiduSpeechRecongnition.cs" />
     <Compile Include="Assets\AssetBundle\AssetBundleBuilder.cs" />
     <Compile Include="Assets\XLua\Src\LuaEnv.cs" />
+    <Compile Include="Assets\MouseCamera\MouseCamera.cs" />
     <Compile Include="Assets\ShaderExamples\GuaCaiPiao\GuaCaiPiao.cs" />
     <Compile Include="Assets\LoopScrollView\LoopScrollView.cs" />
     <Compile Include="Assets\SignedDistanceField\SDFImage.cs" />
@@ -185,8 +187,12 @@
     <Compile Include="Assets\Genetic\Example1\LuaTimer.cs" />
     <Compile Include="Assets\CopyContent\CopyContentController.cs" />
     <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
-    <Compile Include="Assets\Suduku\Suduku.cs" />
-    <Compile Include="Assets\MouseCamera\MouseCamera.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\Tree.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\ObjData.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\INode.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\Node.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\Main.cs" />
+    <Compile Include="Assets\QuadTree\Scripts\CameraBound.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 75102027}
   - component: {fileID: 75102026}
   m_Layer: 0
-  m_Name: main
+  m_Name: CameraCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,6 +476,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23731787270447422, guid: 94d9aead521381d4bbdfee420b00d2ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eeeddac1fb3f23446a7d5ccb95848c67, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94d9aead521381d4bbdfee420b00d2ab, type: 3}
 --- !u!1 &1151091178
@@ -490,6 +495,7 @@ GameObject:
   - component: {fileID: 1151091181}
   - component: {fileID: 1151091180}
   - component: {fileID: 1151091179}
+  - component: {fileID: 1151091183}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -570,3 +576,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151091183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151091178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6ace83522f2ae45b50afa891a98e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetOffset: {x: 0, y: 0, z: 0}
+  distance: 5
+  maxDistance: 20
+  minDistance: 0.6
+  xSpeed: 200
+  ySpeed: 200
+  yMinLimit: -80
+  yMaxLimit: 80
+  zoomRate: 40
+  panSpeed: 0.3
+  zoomDampening: 5
+  autoRotate: 0
+  autoRotateSpeed: 0
