@@ -291,3 +291,4 @@ Received Import Request.
 Start importing Assets/SignedDistanceField/sdf using Guid(85f722ac6dd474943a9aac4287e56d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e9367b8ed5d3616f9e1a072321e36ae') in 0.005657 seconds
   Import took 0.008204 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
