@@ -28,6 +28,7 @@ Assets/StreamingAssets/build_info.txt
 /*.sln
 /*.userprefs
 .vs/
+/*.vsconfig
 
 # =============== #
 # Build Generated #
