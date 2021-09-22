@@ -197,6 +197,9 @@
     <Compile Include="Assets\Genetic\Example1\LuaTimer.cs" />
     <Compile Include="Assets\CopyContent\CopyContentController.cs" />
     <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
+    <Compile Include="Assets\CellSpacePartition\SpacePartition.cs" />
+    <Compile Include="Assets\CellSpacePartition\GameMain.cs" />
+    <Compile Include="Assets\CellSpacePartition\Agent.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -233,6 +236,7 @@
      <None Include="Assets\ShaderExamples\GuaCaiPiao\guacaipiao.shader" />
      <None Include="Assets\UnityPackages\JsonNet\Newtonsoft.Json.dll" />
      <None Include="Assets\StreamingAssets\build_info.txt" />
+     <None Include="Assets\QuadTree\README.txt" />
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\CameraTrans\camera_trans.shader" />
      <None Include="Assets\AStar_C#\README.txt" />
