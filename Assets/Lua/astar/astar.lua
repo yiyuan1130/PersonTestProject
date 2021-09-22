@@ -56,7 +56,7 @@ end
 
 function AStar:create_map()
     -- 27 * 15
-    self.startPos = {14, 9}
+    self.startPos = {12, 8}
     self.endPos = {22, 5}
     self.points = {}
     self.wall = {}
