@@ -71,6 +71,7 @@
     <Compile Include="Assets\DeviceInfos\DeviceInfo.cs" />
     <Compile Include="Assets\DesktopPet\CameraRotateAround.cs" />
     <Compile Include="Assets\BindUnityEventInInspector\CustomEvent\CustomEventClass.cs" />
+    <Compile Include="Assets\AStar_C#\AStarFind.cs" />
     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\ByFile.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
     <Compile Include="Assets\Mesh\MeshTest.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\DownloadTextureReturnSprite\DownloadTextureReturnSprite.cs" />
     <Compile Include="Assets\XLua\Examples\06_Coroutine\Coroutine_Runner.cs" />
     <Compile Include="Assets\XLua\Src\MethodWarpsCache.cs" />
+    <Compile Include="Assets\AStar_C#\ActorManager.cs" />
     <Compile Include="Assets\XLua\Examples\08_Hotfix\StatefullTest.cs" />
     <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
     <Compile Include="Assets\SpineTest\SpineTestPause.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="Assets\XLua\Src\ObjectCasters.cs" />
     <Compile Include="Assets\CreateAnimationCurve\AnimationCurveAsset.cs" />
     <Compile Include="Assets\XLua\Src\SignatureLoader.cs" />
+    <Compile Include="Assets\AStar_C#\ActorMove.cs" />
     <Compile Include="Assets\DynamicCreateSprite\DynamicCreateSprite.cs" />
     <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
     <Compile Include="Assets\Suduku\Suduku.cs" />
@@ -186,6 +189,7 @@
     <Compile Include="Assets\UnityLogViewerTest\Scripts\UnityLogViewTest.cs" />
     <Compile Include="Assets\XLua\Src\CopyByValue.cs" />
     <Compile Include="Assets\XLua\Src\StaticLuaCallbacks.cs" />
+    <Compile Include="Assets\AStar_C#\GameMain.cs" />
     <Compile Include="Assets\AStart\AStarMain.cs" />
     <Compile Include="Assets\XLua\Src\InternalGlobals.cs" />
     <Compile Include="Assets\SliceSprite\SliceSprite.cs" />
@@ -193,10 +197,6 @@
     <Compile Include="Assets\Genetic\Example1\LuaTimer.cs" />
     <Compile Include="Assets\CopyContent\CopyContentController.cs" />
     <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
-    <Compile Include="Assets\AStar_C#\GameMain.cs" />
-    <Compile Include="Assets\AStar_C#\ActorManager.cs" />
-    <Compile Include="Assets\AStar_C#\ActorMove.cs" />
-    <Compile Include="Assets\AStar_C#\AStarFind.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -207,28 +207,35 @@
      <None Include="Assets\LetterStrokes\strokes.shader" />
      <None Include="Assets\ShaderExamples\LiuGuang\liuguang.shader" />
      <None Include="Assets\DesktopPet\MakeTransparent.shader" />
+     <None Include="Assets\SignedDistanceField\README.txt" />
+     <None Include="Assets\XiaHuaXian\README.txt" />
      <None Include="Assets\Water2D\water_mix.shader" />
      <None Include="Assets\ShaderExamples\test\liuguang.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\ShaderExamples\test\clip.shader" />
      <None Include="Assets\DynamicCreateUVTexture\dynamic_create_uv_tex.shader" />
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_shadow.shader" />
+     <None Include="Assets\UIFriction\README.txt" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
      <None Include="Assets\EdgeHighLightShader\edgehightlight.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\Water2D\README.txt" />
+     <None Include="Assets\BMPFront\README.txt" />
      <None Include="Assets\Test\test.shader" />
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_ui.shader" />
      <None Include="Assets\ShaderExamples\ReKongQi\rekongqi.shader" />
      <None Include="Assets\SignedDistanceField\shaders\sdf_shader_thick.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\AStart\README.txt" />
      <None Include="Assets\ShaderExamples\GuaCaiPiao\guacaipiao.shader" />
      <None Include="Assets\UnityPackages\JsonNet\Newtonsoft.Json.dll" />
      <None Include="Assets\StreamingAssets\build_info.txt" />
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
      <None Include="Assets\CameraTrans\camera_trans.shader" />
+     <None Include="Assets\AStar_C#\README.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\license.txt" />
      <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
@@ -242,11 +249,14 @@
      <None Include="Assets\BMPFront\FZLANTYJD.fnt" />
      <None Include="Assets\ShaderExamples\GuaCaiPiao\blit.shader" />
      <None Include="Assets\LICENSE.TXT" />
+     <None Include="Assets\ForeachObjectsInEditor\README.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+     <None Include="Assets\CodeScan\README.txt" />
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\Genetic\README.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:\software\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
