@@ -101,6 +101,7 @@
     <Compile Include="Assets\XLua\Examples\08_Hotfix\StatefullTest.cs" />
     <Compile Include="Assets\XiaHuaXian\UnderLine.cs" />
     <Compile Include="Assets\SpineTest\SpineTestPause.cs" />
+    <Compile Include="Assets\CellSpacePartition\GameMain.cs" />
     <Compile Include="Assets\XLua\Examples\08_Hotfix\HotfixTest2.cs" />
     <Compile Include="Assets\SliceMesh3D\Main.cs" />
     <Compile Include="Assets\QuadTree\Scripts\CameraBound.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Assets\EventDispatcher\Dispatcher.cs" />
     <Compile Include="Assets\ShaderExamples\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\QuadTree\Scripts\Node.cs" />
+    <Compile Include="Assets\CellSpacePartition\Agent.cs" />
     <Compile Include="Assets\XLua\Examples\07_AsyncTest\AsyncTest.cs" />
     <Compile Include="Assets\Water2D\Water2DRTCamera.cs" />
     <Compile Include="Assets\XLua\Src\LuaException.cs" />
@@ -196,10 +198,9 @@
     <Compile Include="Assets\SliceMesh3D\Utility.cs" />
     <Compile Include="Assets\Genetic\Example1\LuaTimer.cs" />
     <Compile Include="Assets\CopyContent\CopyContentController.cs" />
-    <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
     <Compile Include="Assets\CellSpacePartition\SpacePartition.cs" />
-    <Compile Include="Assets\CellSpacePartition\GameMain.cs" />
-    <Compile Include="Assets\CellSpacePartition\Agent.cs" />
+    <Compile Include="Assets\LoopScrollView\TestUseLoopScrollView.cs" />
+    <Compile Include="Assets\PlanB\CreateByData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\ShaderExamples\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
