@@ -9,6 +9,7 @@ Library
 Logs/
 Logs/*
 Logs
+Logs/
 .vs/
 .vscode/
 
